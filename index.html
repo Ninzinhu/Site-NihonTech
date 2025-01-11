@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="https://r.mobirisesite.com/1083967/assets/images/photo-1648737966636-2fc3a5fffc8a.jpeg" type="image/x-icon">
+  <meta name="description" content="NihonTech é um espaço dedicado à tecnologia, projetos inovadores e cultura japonesa. Descubra mais sobre mim e conecte-se nas redes sociais.">
+  <title>NihonTech Hub</title>
+  <link rel="stylesheet" href="/assets/icons.css">
+  <link rel="stylesheet" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/assets//bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/assets/jarallax.css">
+  <link rel="stylesheet" href="/assets/dropdown.css">
+  <link rel="stylesheet" href="/assets/sociocon.css">
+  <link rel="stylesheet" href="/assets/theme.css">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1083967/assets/recaptcha.css?rnd=1736625905483">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1083967/assets/css/mbr-additional.css?rnd=1736625905483" type="text/css">
+  
+  
+  
+  
+
+
+<style>
+.navbar-fixed-top {
+  top: auto;
+}
+#mobiriseBanner.container-banner {
+  height: 8rem;
+  opacity: 1;
+  -webkit-animation: 16s linear animationHeight;
+  -moz-animation: 16s linear animationHeight;
+    -o-animation: 16s linear animationHeight;
+       animation: 16s linear animationHeight;
+       transition: all  0.5s;
+}
+#mobiriseBanner.container-banner.container-banner-closing {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  -webkit-animation: 0.5s linear animationClosing;
+  -moz-animation:  0.5s linear animationClosing;
+    -o-animation:  0.5s linear animationClosing;
+       animation:  0.5s linear animationClosing;
+}
+#mobiriseBanner .banner {
+  min-height: 8rem;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  opacity:1;
+  -webkit-animation: 16s linear animationBanner;
+  -moz-animation: 16s linear animationBanner;
+    -o-animation: 16s linear animationBanner;
+       animation: 16s linear animationBanner;
+  z-index: 1031;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#mobiriseBanner .banner p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  animation: none;
+  visibility: visible;
+}
+#mobiriseBanner .buy-license {
+  text-decoration: underline;
+}
+#mobiriseBanner .banner .btn {
+  margin: 0.3rem 0.5rem;
+  animation: none;
+  visibility: visible;
+}
+.navbar.opened {
+    z-index: 1032;
+}
+@-webkit-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 94% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-moz-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 94% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-o-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 94% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+   @keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 94% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-webkit-keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 8rem; } }
+@-moz-keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 8rem; } }
+@-o-keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 8rem; } }
+   @keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 8rem; } }
+
+@-webkit-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-moz-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-o-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+
+@media(max-width: 767px) {
+  #mobiriseBanner.container-banner {
+    height: 12rem;
+  }
+  #mobiriseBanner .banner {
+    min-height: 12rem;
+  }
+  @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 94% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-moz-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 94% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-o-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 94% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+    @keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 94% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-webkit-keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 12rem; } }
+  @-moz-keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 12rem; } }
+  @-o-keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 12rem; } }
+    @keyframes animationHeight { 0% { height: 0; } 94% { height: 0; } 100% { height: 12rem; } }
+
+  @-webkit-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-moz-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-o-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+}
+</style>
+</head>
+<body>
+<div class="container-banner" id="mobiriseBanner">
+  <div class="banner align-center">
+    <button type="button" onclick="document.getElementById('mobiriseBanner').classList.add('container-banner-closing')" class="btn-close" aria-label="Close" style="position: fixed;top: 16px;right: 16px;"></button>
+    <p class="mbr-text mbr-fonts-style display-7">The site was made with <a href="https://mobirise.com/builder/ai-website-builder.html" class="">Mobirise AI Website Builder</a></p>
+    <div class="mbr-section-btn">
+      <a class="btn btn-sm btn-primary display-4" href="https://ai.mobirise.com/">Create Website with AI!</a>
+      <a class="btn btn-sm btn-secondary display-4" href="https://my.mobirise.com/buy.php?p=126&u=3699644&st=1083967&dm=1083967.mobirisesite.com">Remove This Banner</a>
+    </div>
+  </div>
+</div>
+  
+  <section data-bs-version="5.1" class="menu menu01 operationm5 cid-uzALG7Cndw" once="menu" id="menu-1-uzALG7Cndw">
+
+    
+
+    <nav class="navbar navbar-dropdown navbar-expand-lg">
+        <div class="menu_box container-fluid">
+            <div class="navbar-brand d-flex">
+                <span class="navbar-logo">
+                    <a href="#">
+                        <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1648737966636-2fc3a5fffc8a.jpeg" alt="">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap">
+                    <a class="navbar-caption display-7" href="#">NihonTech</a>
+                </span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link display-4" href="#">Tecnologia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link display-4" href="#">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link display-4" href="#">Contato</a>
+                    </li>
+                </ul>
+                <div class="mbr-section-btn-main" role="tablist"><a class="btn btn-primary display-4" href="#">Redes Sociais</a></div>
+                
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="header01 operationm5 cid-uzALG7Dzg2 mbr-fullscreen" id="hero-1-uzALG7Dzg2">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="content-wrapper">
+                    <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Inovação Japonesa</h3>
+                    <h2 class="mbr-section-title mbr-fonts-style display-1">NihonTech</h2>
+                    <p class="mbr-desc mbr-fonts-style display-5">Tecnologia com um toque japonês</p>
+                    <div class="text-wrapper">
+                         <p class="mbr-text mbr-fonts-style display-7">Mergulhe no mundo da tecnologia japonesa! Aqui, a inovação encontra a tradição, e você vai se surpreender com o que temos a oferecer. Vamos juntos nessa jornada!</p>
+                    </div>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Descubra Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="decor-wrapper">
+                <div class="decor-wrap decor_1"></div>
+                <div class="decor-wrap decor_2"></div>
+                <div class="decor-wrap decor_3"></div>
+                <div class="decor-wrap decor_4"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features02 operationm5 cid-uzALG7DYPb" id="features-2-uzALG7DYPb">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Nossos Destaques Imperdíveis</h2>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="items-wrapper">
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-7">01</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Tecnologia</h4>
+                                <p class="card-text mbr-fonts-style display-7">Explore as últimas inovações que estão moldando o futuro. Da robótica à inteligência artificial, temos tudo!</p>
+                                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#">Saiba Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-7">02</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Projetos</h4>
+                                <p class="card-text mbr-fonts-style display-7">Veja nossos projetos incríveis que unem criatividade e tecnologia. Prepare-se para se inspirar!</p>
+                                <div class="mbr-section-btn">
+                                    <a class="btn btn-primary display-4" href="#">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-7">03</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Contato</h4>
+                                <p class="card-text mbr-fonts-style display-7">Quer bater um papo? Estamos aqui para ouvir suas ideias e sugestões. Não seja tímido!</p>
+                                <div class="mbr-section-btn">
+                                    <a class="btn btn-primary display-4" href="#">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article03 operationm5 cid-uzALG7Er01" id="generic-text-2-uzALG7Er01">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="content-wrapper">
+                    <div class="title-wrapper">
+                         <h2 class="mbr-section-title mbr-fonts-style display-2">Entre em Contato e Conecte-se Conosco!</h2>
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="mbr-text mbr-fonts-style display-7">Estamos sempre prontos para uma boa conversa! Se você tem perguntas, sugestões ou apenas quer trocar ideias, entre em contato. Vamos adorar ouvir você!</p>
+                    </div>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Fale Conosco</a>
+                    </div>
+                </div>
+            </div>
+            <div class="decor-wrapper">
+                
+                
+                
+                
+            </div>
+            <div class="image-wrapper">
+                <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1487887235947-a955ef187fcc.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery01 operationm5 cid-uzALG7EZ9r" id="gallery-4-uzALG7EZ9r">
+  
+  
+  <div class="container-fluid gallery-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head">
+          
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-3 moving-left" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1487017159836-4e23ece2e4cf.jpeg" alt="">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1649972904349-6e44c42644a7.jpeg" alt="">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1531297484001-80022131f5a1.jpeg" alt="">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1535378917042-10a22c95931a.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="decor-wrapper">
+                <div class="decor-wrap decor_1"></div>
+                <div class="decor-wrap decor_2"></div>
+                <div class="decor-wrap decor_3"></div>
+                <div class="decor-wrap decor_4"></div>
+            </div>
+</section>
+
+<section data-bs-version="5.1" class="slider02 mbr-embla operationm5 cid-uzALG7FGJT" id="features-8-uzALG7FGJT">
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10 card">
+                <div class="content-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Nossas Inovações</h2>
+                    <p class="mbr-text mbr-fonts-style display-7">Descubra como estamos revolucionando a tecnologia com projetos que desafiam a lógica e a criatividade. Cada projeto é uma nova aventura, e você é nosso convidado especial!</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-10 card">
+                <div class="embla" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play-interval="5" data-draggable="true">
+                    <div class="embla__viewport">
+                        <div class="embla__container">
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-number mbr-fonts-style display-1">1</h4>
+                                            <p class="item-desc mbr-fonts-style display-7">Robótica que encanta e surpreende.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-number mbr-fonts-style display-1">2</h4>
+                                            <p class="item-desc mbr-fonts-style display-7">Inteligência Artificial para todos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-number mbr-fonts-style display-1">3</h4>
+                                            <p class="item-desc mbr-fonts-style display-7">Projetos que desafiam a gravidade.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-number mbr-fonts-style display-1">4</h4>
+                                            <p class="item-desc mbr-fonts-style display-7">Tecnologia sustentável e inovadora.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-number mbr-fonts-style display-1">5</h4>
+                                            <p class="item-desc mbr-fonts-style display-7">Conectando pessoas e ideias.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-number mbr-fonts-style display-1">6</h4>
+                                            <p class="item-desc mbr-fonts-style display-7">Criatividade sem limites.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="embla__button embla__button--prev">
+                        <span class="mbr-iconfont mobi-mbri-left mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Previous</span>
+                    </button>
+                    <button class="embla__button embla__button--next">
+                        <span class="mbr-iconfont mobi-mbri-right mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="slider03 mbr-embla operationm5 cid-uzALG7Gq0D" id="gallery-2-uzALG7Gq0D">
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Explore Nossos Projetos</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 card">
+                <div class="embla" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-loop="true" data-auto-play-interval="5" data-draggable="true">
+                    <div class="embla__viewport">
+                        <div class="embla__container">
+                            <div class="embla__slide slider-image item">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-img">
+                                            <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1518770660439-4636190af475.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4 class="item-title mbr-fonts-style display-5">Projeto A</h4>
+                                        <p class="item-text mbr-fonts-style display-7">Uma revolução na forma como interagimos com a tecnologia. Prepare-se para se surpreender!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-img">
+                                            <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1460925895917-afdab827c52f.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4 class="item-title mbr-fonts-style display-5">Projeto B</h4>
+                                        <p class="item-text mbr-fonts-style display-7">Um projeto que une arte e tecnologia de forma única. Você não vai querer perder!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-img">
+                                            <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1434493789847-2f02dc6ca35d.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4 class="item-title mbr-fonts-style display-5">Projeto C</h4>
+                                        <p class="item-text mbr-fonts-style display-7">Desafiando as leis da física com inovação. Venha ver como fazemos isso!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="embla__button embla__button--prev">
+                        <span class="mbr-iconfont mobi-mbri-left mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Previous</span>
+                    </button>
+                    <button class="embla__button embla__button--next">
+                        <span class="mbr-iconfont mobi-mbri-right mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="image-wrapper">
+                    <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1463171379579-3fdfb86d6285.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="slider01 mbr-embla operationm5 cid-uzALG7HWPB" id="gallery-1-uzALG7HWPB">
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-6 card">
+                <div class="content-wrapper">
+                    <div class="icon-wrapper">
+                      <span class="mbr-iconfont mobi-mbri-success mobi-mbri"></span>
+                    </div>
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Nossas Redes Sociais</h2>
+                    <p class="mbr-text mbr-fonts-style display-7">Siga-nos nas redes sociais e fique por dentro de tudo que acontece no mundo da tecnologia japonesa. Não perca nenhuma novidade!</p>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Siga-nos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 card">
+                <div class="embla" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-loop="true" data-auto-play-interval="5" data-draggable="true">
+                    <div class="embla__viewport">
+                        <div class="embla__container">
+                            <div class="embla__slide slider-image item">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-img">
+                                            <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1457433575995-8407028a9970.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-img">
+                                            <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1562408590-e32931084e23.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-img">
+                                            <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1473091534298-04dcbce3278c.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="embla__button embla__button--prev">
+                        <span class="mbr-iconfont mobi-mbri-left mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Previous</span>
+                    </button>
+                    <button class="embla__button embla__button--next">
+                        <span class="mbr-iconfont mobi-mbri-right mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features05 operationm5 cid-uzALG7HmgZ" id="metrics-1-uzALG7HmgZ">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <div class="content-wrapper">
+                    <p class="mbr-desc mbr-fonts-style display-7">Números Impressionantes</p>
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Estatísticas da NihonTech</h2>
+                    <p class="mbr-text mbr-fonts-style display-7">Descubra o que faz da NihonTech uma potência no mundo da tecnologia japonesa!</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="items-wrapper">
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-1">10</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Projetos Incríveis</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-1">5</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Anos de Experiência</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-1">1000</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Clientes Satisfeitos</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-number mbr-fonts-style display-1">50</p>
+                                <h4 class="card-title mbr-fonts-style display-5">Ideias Brilhantes</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery01 operationm5 cid-uzALG7IlMt" id="gallery-3-uzALG7IlMt">
+  
+  
+  <div class="container-fluid gallery-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head">
+          
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-3" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1505424297051-c3ad50b055ae.jpeg" alt="">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1421757350652-9f65a35effc7.jpeg" alt="">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1484662020986-75935d2ebc66.jpeg" alt="">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1461749280684-dccba630e2f6.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="decor-wrapper">
+                <div class="decor-wrap decor_1"></div>
+                <div class="decor-wrap decor_2"></div>
+                <div class="decor-wrap decor_3"></div>
+                <div class="decor-wrap decor_4"></div>
+            </div>
+</section>
+
+<section data-bs-version="5.1" class="article06 operationm5 cid-uzALG7IBHu" id="generic-text-5-uzALG7IBHu">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="content-wrapper">
+                   <div class="image-wrap">
+                        <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1434494878577-86c23bcb06b9.jpeg" alt="">
+                   </div>
+                    <div class="card-wrap">
+                        <div class="icon-wrapper">
+                            <span class="mbr-iconfont mobi-mbri-success mobi-mbri"></span>
+                        </div>
+                        <h2 class="mbr-section-title mbr-fonts-style display-5">Sobre Mim</h2>
+                        <p class="mbr-text mbr-fonts-style display-7">Sou um entusiasta da tecnologia japonesa, apaixonado por inovação e criatividade. Com uma mente inquieta, estou sempre em busca de novos desafios e projetos que possam transformar ideias em realidade. Vamos juntos explorar o fascinante mundo da NihonTech!</p>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features07 operationm5 cid-uzALG7JfTT" id="features-10-uzALG7JfTT">
+  
+
+
+  <div class="container-fluid">
+
+      <div class="loop-container">
+        <div class="item display-1" data-linewords="Inovação em Cada Projeto * Criatividade Sem Limites * " data-direction="-1" data-speed="0.05"></div>
+        <div class="item display-1" data-linewords="Inovação em Cada Projeto * Criatividade Sem Limites * " data-direction="-1" data-speed="0.05"></div>
+      </div>
+    
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features04 operationm5 cid-uzALG7JEie" id="features-4-uzALG7JEie">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10 card">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Nossos Destaques</h2>
+                    <p class="mbr-text mbr-fonts-style display-7">Explore o que torna a NihonTech única!</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5  item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <p class="card-number mbr-fonts-style display-7">
+                            01
+                        </p>
+                        <h4 class="card-title mbr-fonts-style display-5">Tecnologia Avançada</h4>
+                        <p class="card-text mbr-fonts-style display-7">Utilizamos as mais recentes inovações para criar soluções que impressionam e encantam!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <p class="card-number mbr-fonts-style display-7">
+                            02
+                        </p>
+                        <h4 class="card-title mbr-fonts-style display-5">Design Inovador</h4>
+                        <p class="card-text mbr-fonts-style display-7">Nossos projetos são visualmente deslumbrantes e funcionais, porque a estética importa!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <p class="card-number mbr-fonts-style display-7">
+                            03
+                        </p>
+                        <h4 class="card-title mbr-fonts-style display-5">Suporte Dedicado</h4>
+                        <p class="card-text mbr-fonts-style display-7">Estamos sempre aqui para ajudar, porque seu sucesso é nossa prioridade!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <p class="card-number mbr-fonts-style display-7">
+                            04
+                        </p>
+                        <h4 class="card-title mbr-fonts-style display-5">Soluções Personalizadas</h4>
+                        <p class="card-text mbr-fonts-style display-7">Cada cliente é único, e nossas soluções são feitas sob medida para você!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features03 operationm5 cid-uzALG7Kif3 mbr-fullscreen" id="features-3-uzALG7Kif3">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="title-wrapper">
+                    <p class="mbr-desc mbr-fonts-style display-7">Conecte-se Comigo</p>
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Entre em Contato</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-10">
+                <div class="items-wrapper">
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-text mbr-fonts-style display-7">Estou sempre aberto a novas ideias e colaborações. Vamos conversar!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-text mbr-fonts-style display-7">Siga-me nas redes sociais para atualizações e novidades!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-text mbr-fonts-style display-7">Seu feedback é importante. Fale comigo!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article02 operationm5 cid-uzALG7KXKr" id="call-to-action-1-uzALG7KXKr">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-6 card">
+                <div class="image-wrapper">
+                    <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1581091226825-a6a2a5aee158.jpeg" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 card">
+                <div class="content-wrapper">
+                    <div class="content-wrap">
+                        <h2 class="mbr-section-title mbr-fonts-style display-2">Junte-se à Revolução</h2>
+                        <p class="mbr-text mbr-fonts-style display-7">Não fique de fora! Venha fazer parte da comunidade NihonTech e descubra como podemos transformar suas ideias em realidade. Clique no botão abaixo e entre em contato!</p>
+                        <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#">Fale Conosco</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="header01 operationm5 cid-uzALG7KK5n mbr-fullscreen" data-bg-video="https://www.youtube.com/embed/6G3JUKbiT-o?autoplay=1&amp;loop=1&amp;playlist=6G3JUKbiT-o&amp;t=20&amp;mute=1&amp;playsinline=1&amp;controls=0&amp;showinfo=0&amp;autohide=1&amp;allowfullscreen=true&amp;mode=transparent" id="video-3-uzALG7KK5n">
+    
+
+    <div class="mbr-fallback-image disabled"></div>
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features01 operationm5 cid-uzALG7LKbV mbr-parallax-background" id="features-1-uzALG7LKbV">
+    
+
+    
+    <div class="mbr-overlay" style="opacity: 0.9; background-color: rgb(245, 233, 233);"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="title-wrapper">
+                    <div class="title-wrap">
+                        <h2 class="mbr-section-title mbr-fonts-style display-2">Inovações Tecnológicas que Transformam Vidas</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="items-wrapper">
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-text mbr-fonts-style display-7">Descubra como a tecnologia japonesa está moldando o futuro com projetos inovadores e criativos que vão te deixar de queixo caído!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="items-wrapper">
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <p class="card-text mbr-fonts-style display-7">Nossos projetos são mais do que ideias; são revoluções que desafiam o status quo e trazem soluções práticas para o dia a dia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="clients01 operationm5 cid-uzALG7M1eD" id="clients-1-uzALG7M1eD">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="items-wrapper">
+                    <div class="item features-image">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img src="https://r.mobirisesite.com/1083967/assets/images/short6.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-image">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img src="https://r.mobirisesite.com/1083967/assets/images/short2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-image">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img src="https://r.mobirisesite.com/1083967/assets/images/short4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-image">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img src="https://r.mobirisesite.com/1083967/assets/images/short1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-image">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img src="https://r.mobirisesite.com/1083967/assets/images/short5.png" alt="">
+                            </div>
+                        </div>
+                    </div>                </div>
+            </div>
+            <div class="decor-wrapper">
+                <div class="decor-wrap decor_1"></div>
+                <div class="decor-wrap decor_2"></div>
+                <div class="decor-wrap decor_3"></div>
+                <div class="decor-wrap decor_4"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features06 operationm5 cid-uzALG7Nntk" id="faq-1-uzALG7Nntk">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Perguntas Frequentes</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="text-wrapper">
+                    <p class="mbr-text mbr-fonts-style display-7">Tire suas dúvidas sobre tecnologia e projetos!</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="text-wrapper">
+                    <p class="mbr-text mbr-fonts-style display-7">Estamos aqui para ajudar você a entender tudo!</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="items-wrapper">
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <div class="title-wrap">
+                                    <h4 class="card-title mbr-fonts-style display-5">O que é NihonTech?</h4>
+                                    <p class="card-tag mbr-fonts-style display-4">Definição</p>
+                                </div>
+                                <div class="text-wrap">
+                                    <p class="card-text mbr-fonts-style display-7">NihonTech é a fusão perfeita entre tecnologia e cultura japonesa!</p>
+                                </div>
+                                <div class="mbr-section-btn">
+                                    <a class="btn btn-primary display-4" href="#">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <div class="title-wrap">
+                                    <h4 class="card-title mbr-fonts-style display-5">Como posso entrar em contato?</h4>
+                                    <p class="card-tag mbr-fonts-style display-4">Contato</p>
+                                </div>
+                                <div class="text-wrap">
+                                    <p class="card-text mbr-fonts-style display-7">Basta acessar nossa página de contato e enviar uma mensagem!</p>
+                                </div>
+                                <div class="mbr-section-btn">
+                                    <a class="btn btn-primary display-4" href="#">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item features-without-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="card-box">
+                                <div class="title-wrap">
+                                    <h4 class="card-title mbr-fonts-style display-5">Quais redes sociais estão disponíveis?</h4>
+                                    <p class="card-tag mbr-fonts-style display-4">Redes</p>
+                                </div>
+                                <div class="text-wrap">
+                                    <p class="card-text mbr-fonts-style display-7">Estamos no Instagram, Twitter e Facebook! Siga-nos!</p>
+                                </div>
+                                <div class="mbr-section-btn">
+                                    <a class="btn btn-primary display-4" href="#">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="slider04 mbr-embla operationm5 cid-uzALG7Narl" id="features-9-uzALG7Narl">
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-5 card">
+                <div class="content-wrapper">
+                    <p class="mbr-desc mbr-fonts-style display-7">Explore Agora</p>
+                    <h2 class="mbr-section-title mbr-fonts-style display-5">Projetos Incríveis</h2>
+                    <p class="mbr-text mbr-fonts-style display-7">Mergulhe em um mundo de projetos que desafiam a lógica e a criatividade!</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 card">
+                <div class="embla" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play-interval="5" data-draggable="true">
+                    <div class="embla__viewport">
+                        <div class="embla__container">
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-title mbr-fonts-style display-2">Robôs Fofos</h4>
+                                            <p class="item-text mbr-fonts-style display-7">Conheça nossos robôs que dançam e fazem café! Sim, você leu certo!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-title mbr-fonts-style display-2">Realidade Aumentada</h4>
+                                            <p class="item-text mbr-fonts-style display-7">Experimente a realidade aumentada como nunca antes, com jogos e experiências imersivas!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-title mbr-fonts-style display-2">Inteligência Artificial</h4>
+                                            <p class="item-text mbr-fonts-style display-7">Descubra como a IA pode facilitar sua vida e ainda te fazer rir!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="embla__slide slider-image item features-without-image" style="margin-left: 2rem; margin-right: 2rem;">
+                                <div class="slide-content">
+                                    <div class="item-wrapper">
+                                        <div class="item-content">
+                                            <h4 class="item-title mbr-fonts-style display-2">Tecnologia Verde</h4>
+                                            <p class="item-text mbr-fonts-style display-7">Projetos sustentáveis que ajudam o planeta e ainda são super legais!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="embla__button embla__button--prev">
+                        <span class="mbr-iconfont mobi-mbri-left mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Previous</span>
+                    </button>
+                    <button class="embla__button embla__button--next">
+                        <span class="mbr-iconfont mobi-mbri-right mobi-mbri" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="pricing01 operationm5 cid-uzALG7OCTE mbr-fullscreen" id="product-list-1-uzALG7OCTE">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Produtos Populares</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-10">
+                <div class="items-wrapper">
+                    <div class="item features-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                 <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1484557052118-f32bd25b45b5.jpeg" alt="">
+                            </div>
+                            <div class="card-box">
+                                <p class="card-price mbr-fonts-style display-7">R$199,99</p>
+                                <p class="card-title mbr-fonts-style display-5">Camiseta Tech</p>
+                                <p class="card-text mbr-fonts-style display-7">Camiseta estilosa com estampas de tecnologia japonesa! Vista-se com estilo!</p>
+                                <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Comprar Agora</a>
+                    </div>
+                            </div>
+                        </div>
+                    </div><div class="item features-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                 <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1423666639041-f56000c27a9a.jpeg" alt="" data-slide-to="1" data-bs-slide-to="2">
+                            </div>
+                            <div class="card-box">
+                                <p class="card-price mbr-fonts-style display-7">R$299,99</p>
+                                <p class="card-title mbr-fonts-style display-5">Caneca Robô</p>
+                                <p class="card-text mbr-fonts-style display-7">Caneca que fala e faz café! O presente perfeito para os amantes de tecnologia!</p>
+                                <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Comprar Agora</a>
+                    </div>
+                            </div>
+                        </div>
+                    </div><div class="item features-image item-mb">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                 <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1496181133206-80ce9b88a853.jpeg" alt="" data-slide-to="2" data-bs-slide-to="3">
+                            </div>
+                            <div class="card-box">
+                                <p class="card-price mbr-fonts-style display-7">R$399,99</p>
+                                <p class="card-title mbr-fonts-style display-5">Fone de Ouvido</p>
+                                <p class="card-text mbr-fonts-style display-7">Fones de ouvido com cancelamento de ruído e design japonês! Ouça o futuro!</p>
+                                <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Comprar Agora</a>
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="list01 operationm5 cid-uzALG7OjnQ" id="features-6-uzALG7OjnQ">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Descubra Nossas Inovações e Projetos</h2>
+                    <div class="text-wrapper">
+                        <p class="mbr-text mbr-fonts-style display-7">Nossos projetos são a combinação perfeita de criatividade e tecnologia, trazendo soluções que vão além da imaginação!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-10">
+                <div id="bootstrap-accordion_21" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_21" aria-expanded="false" aria-controls="collapse1">
+                                <h4 class="panel-title-edit title_1 mbr-fonts-style display-7">Tecnologia 5G</h4>
+                            </a>
+                        </div>
+                        <div id="collapse1_21" class="panel-collapse noScroll collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_21">
+                            <div class="panel-body">
+                                <div class="image-wrapper">
+                                    <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1486312338219-ce68d2c6f44d.jpeg" alt="">
+                                </div>
+                                <div class="content-wrap">
+                                    <h5 class="mbr-fonts-style mbr-title title_1 display-5">Tecnologia 5G</h5>
+                                    <p class="mbr-fonts-style panel-desc desc_1 display-7">Conexão ultrarrápida</p>
+                                    <p class="mbr-fonts-style panel-text text_1 display-7">Experimente a velocidade da luz com a tecnologia 5G! Navegue sem limites!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card_2">
+                        <div class="card-header" role="tab" id="headingTwo">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_21" aria-expanded="false" aria-controls="collapse2">
+                                <h4 class="panel-title-edit title_2 mbr-fonts-style display-7">Drones Incríveis</h4>
+                            </a>
+                        </div>
+                        <div id="collapse2_21" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_21">
+                            <div class="panel-body">
+                                <div class="image-wrapper">
+                                    <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1519389950473-47ba0277781c.jpeg" alt="">
+                                </div>
+                                <div class="content-wrap">
+                                    <h5 class="mbr-fonts-style mbr-title title_2 display-5">Drones Incríveis</h5>
+                                    <p class="mbr-fonts-style panel-desc desc_2 display-7">Voe alto e longe</p>
+                                    <p class="mbr-fonts-style panel-text text_2 display-7">Drones que capturam imagens de tirar o fôlego e fazem acrobacias!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card_3">
+                        <div class="card-header" role="tab" id="headingThree">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_21" aria-expanded="false" aria-controls="collapse3">
+                                <h4 class="panel-title-edit mbr-fonts-style title_3 display-7">Impressão 3D</h4>
+                            </a>
+                        </div>
+                        <div id="collapse3_21" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_21">
+                            <div class="panel-body">
+                                <div class="image-wrapper">
+                                    <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1526374965328-7f61d4dc18c5.jpeg" alt="">
+                                </div>
+                                <div class="content-wrap">
+                                    <h5 class="mbr-fonts-style mbr-title title_3 display-5">Impressão 3D</h5>
+                                    <p class="mbr-fonts-style panel-desc desc_3 display-7">Crie o que imaginar</p>
+                                    <p class="mbr-fonts-style panel-text text_3 display-7">Imprima seus sonhos em 3D e traga suas ideias à vida!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingFour">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_21" aria-expanded="false" aria-controls="collapse4">
+                                <h4 class="panel-title-edit title_1 mbr-fonts-style display-7">Smart Home</h4>
+                            </a>
+                        </div>
+                        <div id="collapse4_21" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_21">
+                            <div class="panel-body">
+                                <div class="image-wrapper">
+                                    <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1488590528505-98d2b5aba04b.jpeg" alt="">
+                                </div>
+                                <div class="content-wrap">
+                                <h5 class="mbr-fonts-style mbr-title title_1 display-5">Smart Home</h5>
+                                    <p class="mbr-fonts-style panel-desc desc_1 display-7">Sua casa, sua tecnologia</p>
+                                    <p class="mbr-fonts-style panel-text text_1 display-7">Transforme sua casa em um lar inteligente com nossos dispositivos inovadores!</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="tabs tabs01 operationm5 cid-uzALG7PRSU" id="features-7-uzALG7PRSU">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item first mbr-fonts-style">
+                        <a class="nav-link show active display-1" role="tab" data-toggle="tab" data-bs-toggle="tab" href="#tab1" aria-selected="true">Inovação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mbr-fonts-style display-1" role="tab" data-toggle="tab" data-bs-toggle="tab" href="#tab2" aria-selected="true">Criatividade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mbr-fonts-style display-1" role="tab" data-toggle="tab" data-bs-toggle="tab" href="#tab3" aria-selected="true">Sustentabilidade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mbr-fonts-style display-1" role="tab" data-toggle="tab" data-bs-toggle="tab" href="#tab4" aria-selected="true">Tecnologia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mbr-fonts-style display-1" role="tab" data-toggle="tab" data-bs-toggle="tab" href="#tab5" aria-selected="true">Futuro</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div class="text-wrapper">
+                            <p class="mbr-text mbr-fonts-style display-7">A inovação é o coração do que fazemos. Estamos sempre buscando novas maneiras de surpreender e encantar nossos usuários com tecnologia de ponta e ideias revolucionárias!</p>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab-pane" role="tabpanel">
+                        <div class="text-wrapper">
+                            <p class="mbr-text mbr-fonts-style display-7">A criatividade é o nosso combustível. Cada projeto é uma nova oportunidade de pensar fora da caixa e criar algo verdadeiramente único e memorável!</p>
+                        </div>
+                    </div>
+                    <div id="tab3" class="tab-pane" role="tabpanel">
+                        <div class="text-wrapper">
+                            <p class="mbr-text mbr-fonts-style display-7">A sustentabilidade é fundamental. Nossos projetos não apenas inovam, mas também respeitam o meio ambiente, garantindo um futuro melhor para todos!</p>
+                        </div>
+                    </div>
+                    <div id="tab4" class="tab-pane" role="tabpanel">
+                        <div class="text-wrapper">
+                            <p class="mbr-text mbr-fonts-style display-7">A tecnologia é a nossa paixão. Desde robôs até inteligência artificial, estamos na vanguarda das inovações que moldam o mundo!</p>
+                        </div>
+                    </div>
+                    <div id="tab5" class="tab-pane" role="tabpanel">
+                        <div class="text-wrapper">
+                            <p class="mbr-text mbr-fonts-style display-7">O futuro é brilhante e estamos prontos para enfrentá-lo! Junte-se a nós nessa jornada emocionante e descubra o que está por vir!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article01 operationm5 cid-uzALG7QyMo mbr-parallax-background" id="image-1-uzALG7QyMo">
+    
+
+    
+    <div class="mbr-overlay" style="opacity: 0.9; background-color: rgb(245, 233, 233);"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="title-wrapper">
+                    <div class="title-wrap">
+                        <h2 class="mbr-section-title mbr-fonts-style display-2">Entre em Contato Conosco</h2>
+                        <div class="mbr-section-btn">
+                            <a class="btn btn-primary display-4" href="#">Fale Conosco</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="header02 operationm5 cid-uzALG7Qix7" id="hero-2-uzALG7Qix7">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="content-wrapper">
+                   <div class="image-wrap">
+                        <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1573164713988-8665fc963095.jpeg" alt="">
+                   </div>
+                    <div class="card-wrap">
+                        <p class="mbr-desc mbr-fonts-style display-7">Tecnologia e Inovação</p>
+                        <h1 class="mbr-section-title mbr-fonts-style display-1">NihonTech</h1>
+                        <p class="mbr-text mbr-fonts-style display-7">Bem-vindo ao NihonTech, onde a tecnologia encontra a cultura japonesa! Aqui, você encontrará projetos incríveis, insights sobre tecnologia e uma pitada de humor. Prepare-se para uma jornada fascinante pelo mundo da inovação nipônica!</p>
+                        <div class="mbr-section-btn">
+                            <a class="btn btn-primary display-4" href="#">Descubra Mais</a>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article04 operationm5 cid-uzALG7QACY" id="generic-text-3-uzALG7QACY">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="content-wrapper">
+                    <div class="desc-wrapper">
+                        <p class="mbr-desc mbr-fonts-style display-7">Sobre Mim</p>
+                    </div>
+                    <h2 class="mbr-text mbr-fonts-style display-2">Sou um entusiasta da tecnologia e da cultura japonesa, sempre em busca de novas ideias e projetos inovadores.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article05 operationm5 cid-uzALG7RUqp" id="generic-text-4-uzALG7RUqp">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-1">Projetos Incríveis</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="content-wrapper">
+                    <div class="image-wrapper">
+                        <img src="https://r.mobirisesite.com/1083967/assets/images/photo-1498050108023-c5249f4df085.jpeg" alt="">
+                    </div>
+                    <p class="mbr-text mbr-fonts-style display-7">Explore meus projetos que misturam tecnologia e cultura japonesa. De aplicativos a gadgets, cada criação é uma fusão de tradição e inovação.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="video01 operationm5 cid-uzALG7RITV" id="video-2-uzALG7RITV">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Assista e Aprenda</h2>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="content-wrapper">
+                    <div class="mbr-figure"><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/BadB1z-V_qU?rel=0&amp;amp;mute=1&amp;showinfo=0&amp;autoplay=1&amp;loop=1&amp;playlist=BadB1z-V_qU" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article01 operationm5 cid-uzALG7Rfd5 mbr-fullscreen mbr-parallax-background" id="image-2-uzALG7Rfd5">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="title-wrapper">
+                    <div class="title-wrap">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form01 operationm5 cid-uzALG7RXeZ" id="contact-form-1-uzALG7RXeZ">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-wrapper">
+                    <div class="title-wrapper">
+                        <p class="mbr-desc mbr-fonts-style display-7">Entre em Contato Comigo</p>
+                        <h2 class="mbr-section-title mbr-fonts-style display-2">Fale Comigo</h2>
+                    </div>
+                    <div class="mbr-form form-wrap" data-form-type="formoid">
+                        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="helbFUiZ28wqD/cBwDN/zSW+SWbDo2esN9Z5GUVthyxWmGLX+uFiZ6VNkmNLYLopIg/gTSPGBYRjf7MM26bMkrEDJs6aDxN++Q9NlHd0SrfgW3b/0FbG1xxq9v4tGets">
+                            <div class="row">
+                                <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for
+                                    filling out the form!</div>
+                                <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12"> Oops...!
+                                    some problem!
+                                </div>
+                            </div>
+                            <div class="dragArea row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3 mb-3" data-for="name">
+                                    <input type="text" name="name" placeholder="Nome" data-form-field="name" class="form-control display-4" value="" id="name-contact-form-1-uzALG7RXeZ">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="text">
+                                    <input type="text" name="text" placeholder="Email" data-form-field="email" class="form-control display-7" value="" id="text-contact-form-1-uzALG7RXeZ">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="textarea">
+                                    <textarea name="textarea" placeholder="Mensagem" data-form-field="message" class="form-control display-4" id="textarea-contact-form-1-uzALG7RXeZ"></textarea>
+                                </div>
+                                <div class="col mbr-section-btn">
+                                    <button type="submit" class="btn btn-primary display-4">Enviar Mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts01 operationm5 cid-uzALG7TSrT" id="contacts-1-uzALG7TSrT">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10 card">
+                <div class="title-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">Redes Sociais</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4  item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">Telefone</h4>
+                        <a href="#">
+                        <p class="card-text mbr-fonts-style display-7">(11) 98765-4321</p>
+                        </a>
+                    </div>
+                </div>
+            </div><div class="col-12 col-lg-4 item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">Email</h4>
+                        <a href="#">
+                            <p class="card-text mbr-fonts-style display-7">contato@nihontech.com</p>
+                        </a>
+                    </div>
+                </div>
+            </div><div class="col-12 col-lg-4 item features-without-image item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">Endereço</h4>
+                        <a href="#">
+                           <p class="card-text mbr-fonts-style display-7">Aracaju Brazil</p> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="footer01 operationm5 cid-uzALG7TE7Q" once="footers" id="footer-1-uzALG7TE7Q">
+    
+
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-12 col-lg-6">
+                
+                <p class="mbr-copy mbr-fonts-style display-4">© 2025 NihonTech. Todos os direitos reservados.</p>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
+
+
+  <script src="https://r.mobirisesite.com/1083967/assets/web/assets/jquery/jquery.min.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/parallax/jarallax.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/smoothscroll/smooth-scroll.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/ytplayer/index.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/dropdown/js/navbar-dropdown.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/scrollgallery/scroll-gallery.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/embla/embla.min.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/embla/script.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/vimeoplayer/player.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/mbr-tabs/mbr-tabs.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/theme/js/script.js?rnd=1736625905483"></script>
+  <script src="https://r.mobirisesite.com/1083967/assets/formoid.min.js?rnd=1736625905483"></script>
+  
+  
+  
+
+</body>
+</html>
