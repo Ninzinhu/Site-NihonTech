@@ -24,13 +24,13 @@
    <img alt="Github stars" src="https://img.shields.io/github/stars/ninzinhu/site-nihontech?color=56BEB8" /> 
 </p>
 
-<!-- Status -->
+ # Status 
 
-<!-- <h4 align="center"> 
-	🚧  Site NihonTech 🚀 Under construction...  🚧
+ <h4 align="center"> 
+	🚧  Site NihonTech 🚀 Ainda em construnção...  🚧
 </h4> 
 
-<hr> -->
+<hr> 
 
 <p align="center">
   <a href="#dart-about">Sobre</a> &#xa0; | &#xa0; 
