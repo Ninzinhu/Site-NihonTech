@@ -1,0 +1,25 @@
+/* Reset básico e variáveis globais */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trap', Arial, sans-serif;
+  background: #18181b;
+  color: #fff;
+}
+
+:root {
+  --primary: #22c55e;
+  --background: #18181b;
+  --text: #fff;
+  --accent: #22c55e;
+}
+
+@font-face {
+  font-family: 'Trap';
+  src: url('/fonts/Trap-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
