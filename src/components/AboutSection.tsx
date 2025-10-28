@@ -4,16 +4,25 @@ export default function AboutSection() {
   return (
     <section
       className="about-tech py-5"
-      style={{ background: "#fff" }}
+      style={{ background: "var(--bg-primary)" }}
       id="about-tech">
       <div className="container">
         <div className="row justify-content-center mb-5">
           <div className="col-12 text-center">
             <h2
-              style={{ fontWeight: 700, fontSize: "2.5rem", color: "#a72828" }}>
+              style={{
+                fontWeight: 700,
+                fontSize: "2.5rem",
+                color: "var(--text-secondary)",
+              }}>
               Sobre a NihonTech
             </h2>
-            <p style={{ fontSize: "1.2rem", color: "#333", opacity: 0.85 }}>
+            <p
+              style={{
+                fontSize: "1.2rem",
+                color: "var(--text-primary)",
+                opacity: 0.85,
+              }}>
               Paixão por tecnologia, inovação e criatividade japonesa.
             </p>
           </div>
@@ -28,7 +37,7 @@ export default function AboutSection() {
               style={{
                 borderRadius: 24,
                 objectFit: "cover",
-                boxShadow: "0 8px 32px rgba(178,58,11,0.10)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
               }}
             />
           </div>
@@ -37,14 +46,23 @@ export default function AboutSection() {
               className="card border-0 shadow-sm p-4"
               style={{
                 borderRadius: 20,
-                background: "#ffd6b0",
+                background: "var(--card-gradient)",
                 minHeight: 220,
               }}>
               <h5
-                style={{ fontWeight: 700, color: "#a72828", marginBottom: 12 }}>
+                style={{
+                  fontWeight: 700,
+                  color: "var(--text-secondary)",
+                  marginBottom: 12,
+                }}>
                 Quem somos
               </h5>
-              <p style={{ color: "#333", opacity: 0.9, fontSize: "1.1rem" }}>
+              <p
+                style={{
+                  color: "var(--text-primary)",
+                  opacity: 0.9,
+                  fontSize: "1.1rem",
+                }}>
                 Somos entusiastas da tecnologia japonesa, apaixonados por
                 inovação e criatividade. Com uma mente inquieta, estamos sempre
                 em busca de novos desafios e projetos que possam transformar

@@ -1,130 +1,158 @@
 "use client";
-
-import { DeviceMobile, Globe, Monitor } from "phosphor-react";
+import styles from "@/styles/ServicesSection.module.css";
+import {
+  Browser,
+  ChartPie,
+  Code,
+  DeviceMobile,
+  Globe,
+  Monitor,
+  Robot,
+  Shield,
+} from "phosphor-react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ServicesSection() {
+  const services = [
+    {
+      icon: <Code size={32} weight="duotone" />,
+      title: "Automação Inteligente",
+      description:
+        "Elimine tarefas repetitivas e aumente a eficiência com inteligência artificial avançada.",
+    },
+    {
+      icon: <Robot size={32} weight="duotone" />,
+      title: "Chatbots & Assistência Virtual",
+      description:
+        "Soluções de atendimento automatizadas que trabalham 24 horas por dia para seus clientes.",
+    },
+    {
+      icon: <Globe size={32} weight="duotone" />,
+      title: "Integração e Implementação",
+      description:
+        "Conecte todas suas ferramentas e plataformas com soluções personalizadas sob medida.",
+    },
+    {
+      icon: <Browser size={32} weight="duotone" />,
+      title: "Web Development",
+      description:
+        "Sites e aplicações web modernas, responsivas e otimizadas para performance e conversão.",
+    },
+    {
+      icon: <DeviceMobile size={32} weight="duotone" />,
+      title: "Aplicação Mobile",
+      description:
+        "Apps nativos e multiplataforma desenvolvidos com tecnologia de ponta para iOS e Android.",
+    },
+    {
+      icon: <ChartPie size={32} weight="duotone" />,
+      title: "Análise de Dados",
+      description:
+        "Transforme dados em insights acionáveis para tomar decisões estratégicas.",
+    },
+    {
+      icon: <Shield size={32} weight="duotone" />,
+      title: "Sistemas Únicos",
+      description:
+        "Software personalizado sob medida para atender às necessidades específicas do seu negócio.",
+    },
+    {
+      icon: <Monitor size={32} weight="duotone" />,
+      title: "Business Intelligence",
+      description:
+        "Dashboards inteligentes e relatórios automatizados para visualização de dados.",
+    },
+    {
+      icon: <Globe size={32} weight="duotone" />,
+      title: "Infraestrutura Cloud",
+      description:
+        "Soluções em nuvem escaláveis e seguras para sua empresa crescer sem limites.",
+    },
+  ];
+
+  const [isDesktop, setIsDesktop] = useState(false);
+  const gridRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 901px)");
+    const handle = () => setIsDesktop(mq.matches);
+    handle();
+    if (mq.addEventListener) mq.addEventListener("change", handle);
+    else mq.addListener(handle);
+    return () => {
+      if (mq.removeEventListener) mq.removeEventListener("change", handle);
+      else mq.removeListener(handle);
+    };
+  }, []);
+
+  // Ensure any external script (eg. jQuery) that mutates the grid doesn't force 4 columns.
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+
+    const applyDesired = () => {
+      const isWide = window.matchMedia("(min-width: 901px)").matches;
+      if (isWide) {
+        // set inline style to override other inline styles
+        el.style.gridTemplateColumns = "repeat(3, 1fr)";
+        el.style.gridAutoRows = "minmax(220px, auto)";
+      } else {
+        // allow CSS media queries to take over on smaller viewports
+        el.style.removeProperty("grid-template-columns");
+        el.style.removeProperty("grid-auto-rows");
+      }
+    };
+
+    // Apply immediately
+    applyDesired();
+
+    // Watch for attribute changes (scripts may replace style/class)
+    const mo = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (
+          m.type === "attributes" &&
+          (m.attributeName === "style" || m.attributeName === "class")
+        ) {
+          applyDesired();
+          break;
+        }
+      }
+    });
+
+    mo.observe(el, { attributes: true, attributeFilter: ["style", "class"] });
+
+    const onResize = () => applyDesired();
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      mo.disconnect();
+      window.removeEventListener("resize", onResize);
+    };
+  }, [gridRef]);
+
   return (
-    <section
-      className="services-tech py-5"
-      style={{ background: "#181c23" }}
-      id="services-tech">
-      <div className="container">
-        <div className="row justify-content-center mb-5">
-          <div className="col-12 text-center">
-            <h2
-              style={{ fontWeight: 700, fontSize: "2.5rem", color: "#ffd6b0" }}>
-              Nossos Serviços
-            </h2>
-            <p style={{ fontSize: "1.2rem", color: "#fff", opacity: 0.85 }}>
-              Tudo o que sua empresa precisa para inovar com tecnologia.
-            </p>
-          </div>
-        </div>
-        <div className="row g-4 justify-content-center">
-          <div className="col-12 col-md-4">
-            <div
-              className="card h-100 border-0 shadow-sm text-center p-4 service-card"
-              style={{
-                borderRadius: 20,
-                background: "#232733",
-                color: "#fff",
-                transition: "transform .2s",
-              }}>
-              <div
-                style={{
-                  background: "#ffd6b0",
-                  borderRadius: "50%",
-                  width: 72,
-                  height: 72,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 24px auto",
-                }}>
-                <Monitor size={36} color="#181c23" weight="duotone" />
-              </div>
-              <h5
-                style={{ fontWeight: 700, color: "#ffd6b0", marginBottom: 12 }}>
-                Sites & Landing Pages
-              </h5>
-              <p style={{ color: "#fff", opacity: 0.85 }}>
-                Criação de sites institucionais, landing pages e portais com
-                design moderno e performance.
-              </p>
+    <section className={styles.servicesSection} id="services-tech">
+      <div className={styles.container}>
+        <h2 className={styles.title}>Soluções Inteligentes</h2>
+        <p className={styles.subtitle}>
+          Tecnologia de ponta para automatizar e escalar seu negócio
+        </p>
+
+        <div
+          ref={gridRef}
+          className={styles.servicesGrid}
+          style={
+            isDesktop ? { gridTemplateColumns: "repeat(3, 1fr)" } : undefined
+          }>
+          {services.map((service, index) => (
+            <div key={index} className={styles.serviceCard}>
+              <div className={styles.iconWrapper}>{service.icon}</div>
+              <h3 className={styles.serviceTitle}>{service.title}</h3>
+              <p className={styles.serviceDescription}>{service.description}</p>
             </div>
-          </div>
-          <div className="col-12 col-md-4">
-            <div
-              className="card h-100 border-0 shadow-sm text-center p-4 service-card"
-              style={{
-                borderRadius: 20,
-                background: "#232733",
-                color: "#fff",
-                transition: "transform .2s",
-              }}>
-              <div
-                style={{
-                  background: "#ffd6b0",
-                  borderRadius: "50%",
-                  width: 72,
-                  height: 72,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 24px auto",
-                }}>
-                <Globe size={36} color="#181c23" weight="duotone" />
-              </div>
-              <h5
-                style={{ fontWeight: 700, color: "#ffd6b0", marginBottom: 12 }}>
-                Sistemas Web
-              </h5>
-              <p style={{ color: "#fff", opacity: 0.85 }}>
-                Soluções sob medida para automação, gestão, dashboards e
-                produtividade.
-              </p>
-            </div>
-          </div>
-          <div className="col-12 col-md-4">
-            <div
-              className="card h-100 border-0 shadow-sm text-center p-4 service-card"
-              style={{
-                borderRadius: 20,
-                background: "#232733",
-                color: "#fff",
-                transition: "transform .2s",
-              }}>
-              <div
-                style={{
-                  background: "#ffd6b0",
-                  borderRadius: "50%",
-                  width: 72,
-                  height: 72,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 24px auto",
-                }}>
-                <DeviceMobile size={36} color="#181c23" weight="duotone" />
-              </div>
-              <h5
-                style={{ fontWeight: 700, color: "#ffd6b0", marginBottom: 12 }}>
-                Apps & Integrações
-              </h5>
-              <p style={{ color: "#fff", opacity: 0.85 }}>
-                Aplicativos, integrações com APIs, ERPs e consultoria tech para
-                inovar de verdade.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-      <style>{`
-        .service-card:hover {
-          transform: translateY(-8px) scale(1.03);
-          box-shadow: 0 8px 32px rgba(178,58,11,0.10);
-        }
-      `}</style>
     </section>
   );
 }

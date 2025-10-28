@@ -1,66 +1,123 @@
 .navbar {
-  width: 100%;
-  background: #18181b;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.05);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.logo img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid var(--primary);
-}
-
-.brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary);
-  letter-spacing: 1px;
-}
-
-.menu {
-  display: flex;
-  gap: 2rem;
-}
-
-.menu a {
-  color: #fff;
+  gap: 12px;
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
 }
 
-.menu a:hover {
-  color: var(--primary);
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logoText {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-primary);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
 }
 
 .cta {
-  background: var(--primary);
-  color: #18181b;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 6px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: 0.95rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
   text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .cta:hover {
-  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .logoText {
+    font-size: 1.3rem;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
 }

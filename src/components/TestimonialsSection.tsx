@@ -1,4 +1,5 @@
 "use client";
+import styles from "@/styles/TestimonialsSection.module.css";
 import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,58 +9,40 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const depoimentos = [
   {
-    nome: "Lucas Andrade",
-    cargo: "CEO, ContaMais",
+    nome: "Ricardo Silva",
+    cargo: "Diretor de TI, TechCorp",
     texto:
-      "A equipe da NihonTech superou nossas expectativas! O sistema ficou moderno, rápido e o suporte é excelente.",
+      "Implementamos bots personalizados que automatizaram 80% do atendimento ao cliente. A produtividade aumentou drasticamente e a satisfação dos clientes também.",
   },
   {
-    nome: "Marina Sato",
-    cargo: "Fundadora, Sato Design",
+    nome: "Ana Paula Santos",
+    cargo: "CEO, StartupHub",
     texto:
-      "O site institucional ficou incrível, com visual tech e performance. Recomendo para quem quer inovar!",
+      "A automação de processos da Konpeki revolucionou nossa operação. Agora focamos em estratégia enquanto a tecnologia trabalha 24/7 para nós.",
   },
   {
-    nome: "Carlos Lima",
-    cargo: "CTO, FinanPro",
+    nome: "Carlos Mendes",
+    cargo: "Founder, E-commerce Plus",
     texto:
-      "A integração de APIs e o dashboard desenvolvido pela NihonTech trouxeram agilidade e controle ao nosso negócio.",
+      "A integração de sistemas criada pela Konpeki conectou todas nossas plataformas. Ganhamos visibilidade completa e tomamos decisões baseadas em dados reais.",
   },
   {
-    nome: "João Marcos",
-    cargo: "Founder, EliteSkins",
+    nome: "Juliana Costa",
+    cargo: "Head de Operações, RetailPro",
     texto:
-      "A NihonTech entregou nossa plataforma com qualidade, agilidade e atenção aos detalhes. O resultado superou nossas expectativas!",
+      "Nossos processos eram manuais e lentos. Com a automação inteligente da Konpeki, reduzimos erros em 95% e aumentamos a velocidade de entrega em 300%.",
   },
   {
-    nome: "Patrícia Oliveira",
-    cargo: "CTO, AgroDigital",
+    nome: "Fernando Rodrigues",
+    cargo: "CTO, FinTech Solutions",
     texto:
-      "A expertise da NihonTech em soluções web foi fundamental para o crescimento digital da nossa empresa. Atendimento rápido e eficiente!",
+      "Os chatbots personalizados transformaram nosso atendimento. Agora respondemos 10x mais rápido e nossos clientes ficaram muito mais satisfeitos.",
   },
   {
-    nome: "Renato Kimura",
-    cargo: "Gerente de Projetos, LogiMax",
+    nome: "Mariana Alves",
+    cargo: "Gerente de Vendas, MarketForce",
     texto:
-      "O time da NihonTech é diferenciado! Entregaram nosso sistema no prazo, com qualidade e suporte sempre disponível.",
-  },
-  {
-    nome: "Fernanda Souza",
-    cargo: "Diretora, MarketUp",
-    texto:
-      "Profissionalismo e criatividade definem a NihonTech. O app ficou intuitivo e super elogiado pelos nossos clientes!",
-  },
-  {
-    nome: "Eduardo Tanaka",
-    cargo: "COO, HealthCare+",
-    texto:
-      "A consultoria tech da NihonTech foi essencial para escalarmos nosso sistema. Recomendo de olhos fechados!",
-  },
-  {
-    nome: "Beatriz Ramos",
-    cargo: "Gestora, EducaMais",
-    texto:
-      "O site educacional ficou lindo, rápido e fácil de usar. Atendimento atencioso do início ao fim do projeto!",
+      "A implementação da IA para análise de dados mudou completamente como vendemos. Agora temos previsibilidade e insights que antes eram impossíveis.",
   },
 ];
 
@@ -74,106 +57,47 @@ export default function TestimonialsSection() {
   }, [atual]);
 
   return (
-    <section
-      id="testimonials-tech"
-      style={{
-        background: "linear-gradient(120deg, #181c24 0%, #23272f 100%)",
-        padding: "80px 0 60px 0",
-        fontFamily: "Inter, sans-serif",
-      }}>
+    <section id="testimonials-tech" className={styles.testimonialSection}>
       <div className="container">
-        <h2
-          className="text-center mb-2"
-          style={{
-            color: "#ffd6b0",
-            fontWeight: 900,
-            fontSize: "2.2rem",
-            letterSpacing: "-1px",
-          }}>
-          Depoimentos
-        </h2>
-        <p
-          className="text-center mb-5"
-          style={{ color: "#fff", opacity: 0.7, fontSize: "1.1rem" }}>
-          O que nossos clientes dizem sobre a experiência tech.
+        <h2 className={styles.title}>O Que Nossos Clientes Dizem</h2>
+        <p className={styles.subtitle}>
+          Empresas que transformaram seus processos com nossas soluções
         </p>
-        <div className="row justify-content-center">
-          <div className="col-lg-7">
-            <div
-              style={{
-                background: "rgba(24,28,36,0.85)",
-                borderRadius: 40,
-                boxShadow: "0 12px 48px rgba(255,214,176,0.13)",
-                padding: "64px 48px",
-                textAlign: "center",
-                backdropFilter: "blur(10px)",
-                border: "2px solid rgba(255,214,176,0.16)",
-                position: "relative",
-                minHeight: 300,
-                overflow: "hidden",
-              }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ maxWidth: "800px", width: "100%" }}>
+            <div className={styles.testimonialCard}>
               <Swiper
                 modules={[Autoplay, Navigation, Pagination]}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
                 navigation={true}
                 pagination={{ clickable: true }}
                 loop
-                style={{ width: "100%", minHeight: 180 }}>
+                className={styles.swiperContainer}>
                 {depoimentos.map((dep, idx) => (
                   <SwiperSlide key={idx}>
-                    <div
-                      style={{
-                        position: "relative",
-                        width: "100%",
-                        minHeight: 160,
-                      }}>
-                      {/* Ícone aspas SVG neon */}
+                    <div className={styles.slideContent}>
                       <svg
                         width="48"
                         height="48"
                         viewBox="0 0 48 48"
                         fill="none"
-                        style={{ position: "absolute", top: 24, left: 24 }}>
+                        className={styles.quoteIcon}>
                         <path
                           d="M16 36c0-8 4-12 8-12v-8c-8 0-16 8-16 20h8zm24 0c0-8 4-12 8-12v-8c-8 0-16 8-16 20h8z"
-                          fill="#ffd6b0"
-                          opacity="0.18"
+                          fill="var(--text-secondary)"
+                          opacity="0.12"
                         />
                         <path
                           d="M16 36c0-8 4-12 8-12v-8c-8 0-16 8-16 20h8zm24 0c0-8 4-12 8-12v-8c-8 0-16 8-16 20h8z"
-                          stroke="#ffd6b0"
+                          stroke="var(--text-secondary)"
                           strokeWidth="2"
                         />
                       </svg>
-                      <p
-                        style={{
-                          color: "#fff",
-                          fontSize: "1.18rem",
-                          fontWeight: 500,
-                          marginBottom: 32,
-                          marginTop: 12,
-                          zIndex: 1,
-                          position: "relative",
-                        }}>
+                      <p className={styles.testimonialText}>
                         &quot;{dep.texto}&quot;
                       </p>
-                      <div
-                        style={{
-                          color: "#ffd6b0",
-                          fontWeight: 700,
-                          fontSize: "1.08rem",
-                          marginBottom: 2,
-                        }}>
-                        {dep.nome}
-                      </div>
-                      <div
-                        style={{
-                          color: "#fff",
-                          opacity: 0.7,
-                          fontSize: "0.98rem",
-                        }}>
-                        {dep.cargo}
-                      </div>
+                      <div className={styles.authorName}>{dep.nome}</div>
+                      <div className={styles.authorRole}>{dep.cargo}</div>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -182,51 +106,6 @@ export default function TestimonialsSection() {
           </div>
         </div>
       </div>
-      <style jsx global>{`
-        .swiper-pagination {
-          width: 100%;
-          display: flex !important;
-          justify-content: center;
-          align-items: center;
-          gap: 8px;
-          margin-top: 18px;
-          position: static !important;
-        }
-        .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: #fff;
-          opacity: 0.3;
-          margin: 0 3px;
-          display: inline-block;
-          transition: background 0.2s, opacity 0.2s;
-          border: 2px solid #ffd6b0;
-        }
-        .swiper-pagination-bullet-active {
-          background: #ffd6b0 !important;
-          opacity: 1 !important;
-          border: 2px solid #ffd6b0;
-        }
-        .swiper-button-prev,
-        .swiper-button-next {
-          color: #ffd6b0 !important;
-          background: none !important;
-          border: none !important;
-          font-size: 44px !important;
-          width: 56px;
-          height: 56px;
-          top: 75%;
-          transform: translateY(-50%);
-          z-index: 10;
-          overflow: visible !important;
-        }
-        .swiper-button-prev:after,
-        .swiper-button-next:after {
-          font-size: 44px !important;
-          color: #ffd6b0 !important;
-        }
-      `}</style>
     </section>
   );
 }

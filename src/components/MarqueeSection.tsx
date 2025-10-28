@@ -2,7 +2,7 @@ export default function MarqueeSection() {
   return (
     <div
       style={{
-        background: "#a72828",
+        background: "var(--main-gradient)",
         width: "100%",
         overflow: "hidden",
         padding: 0,

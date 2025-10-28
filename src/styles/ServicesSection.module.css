@@ -1,0 +1,184 @@
+.servicesSection {
+  padding: 80px 0;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.servicesSection::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, var(--accent-color) 0%, transparent 70%);
+  opacity: 0.05;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Force three columns on all viewports so layout stays 3xN */
+  grid-auto-rows: minmax(220px, auto);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* High-specificity override: ensure desktop widths show 3 columns even if other styles try to set 4 */
+@media (min-width: 901px) {
+  #services-tech .servicesGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-auto-rows: minmax(220px, auto) !important;
+  }
+}
+
+.serviceCard {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  /* removed fixed aspect-ratio so cards can resize nicely on small screens */
+}
+
+.serviceCard:hover {
+  transform: var(--hover-transform);
+  background: var(--card-hover);
+  box-shadow: var(--glow);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover .iconWrapper {
+  transform: translateY(-5px);
+}
+
+.serviceTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.serviceDescription {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .serviceCard {
+    padding: 22px 16px;
+  }
+
+  .serviceTitle {
+    font-size: 1.05rem;
+  }
+
+  .serviceDescription {
+    font-size: 0.9rem;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .serviceCard {
+    padding: 18px 12px;
+  }
+
+  .serviceTitle {
+    font-size: 1.05rem;
+  }
+
+  .serviceDescription {
+    font-size: 0.85rem;
+  }
+}

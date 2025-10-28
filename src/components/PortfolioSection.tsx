@@ -32,7 +32,8 @@ export default function PortfolioSection() {
     <section
       id="portfolio-tech"
       style={{
-        background: "linear-gradient(120deg, #23272f 0%, #181c24 100%)",
+        background:
+          "linear-gradient(120deg, var(--bg-secondary) 0%, var(--bg-primary) 100%)",
         padding: "80px 0 60px 0",
         fontFamily: "Inter, sans-serif",
       }}>
@@ -40,7 +41,7 @@ export default function PortfolioSection() {
         <h2
           className="text-center mb-2"
           style={{
-            color: "#ffd6b0",
+            color: "var(--text-secondary)",
             fontWeight: 900,
             fontSize: "2.3rem",
             letterSpacing: "-1px",
@@ -63,13 +64,13 @@ export default function PortfolioSection() {
                 <div
                   className="portfolio-card h-100 d-flex flex-column align-items-center"
                   style={{
-                    background: "rgba(24,28,36,0.85)",
+                    background: "#0f1720",
                     borderRadius: 28,
-                    boxShadow: "0 8px 32px rgba(255,214,176,0.08)",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
                     padding: "28px 18px 24px 18px",
                     textAlign: "center",
                     backdropFilter: "blur(8px)",
-                    border: "1.5px solid rgba(255,214,176,0.13)",
+                    border: "1.5px solid rgba(255,255,255,0.03)",
                     transition: "box-shadow .2s, border-color .2s",
                   }}>
                   <div style={{ width: "100%", marginBottom: 18 }}>
@@ -90,7 +91,7 @@ export default function PortfolioSection() {
                   </div>
                   <h3
                     style={{
-                      color: "#ffd6b0",
+                      color: "var(--text-secondary)",
                       fontWeight: 700,
                       fontSize: "1.1rem",
                       marginBottom: 10,
@@ -114,8 +115,8 @@ export default function PortfolioSection() {
       </div>
       <style>{`
         .portfolio-card:hover {
-          box-shadow: 0 12px 40px #ffd6b0, 0 0 0 2px #ffd6b0;
-          border-color: #ffd6b0;
+          box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 0 2px rgba(255,255,255,0.03);
+          border-color: rgba(255,255,255,0.03);
         }
       `}</style>
     </section>

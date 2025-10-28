@@ -1,10 +1,6 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  --konpeki-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--bg-primary) 100%);
+  --card-hover: 0 8px 32px rgba(0, 209, 255, 0.15);
 
   display: grid;
   grid-template-rows: 20px 1fr 20px;
@@ -14,6 +10,22 @@
   padding: 80px;
   gap: 64px;
   font-family: 'Trap', Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, var(--primary-color) 0%, transparent 70%);
+  opacity: 0.05;
+  pointer-events: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,15 +75,11 @@
 
 .ctas a {
   appearance: none;
-  border-radius: 128px;
+  border-radius: 8px;
   height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  padding: 0 24px;
+  border: 1px solid rgba(0, 209, 255, 0.2);
+  transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -79,16 +87,36 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
 }
 
 a.primary {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--main-gradient);
+  color: var(--text-primary);
   gap: 8px;
+  box-shadow: var(--glow);
+}
+
+a.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+a.primary:hover::before {
+  left: 100%;
 }
 
 a.secondary {
-  border-color: var(--gray-alpha-200);
+  background: rgba(0, 209, 255, 0.1);
+  border: 1px solid var(--primary-color);
+  color: var(--text-primary);
   min-width: 158px;
 }
 
@@ -111,18 +139,19 @@ a.secondary {
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 209, 255, 0.8);
   }
 
   a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+    background: rgba(0, 209, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: var(--glow);
   }
 
   .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    color: var(--primary-color);
+    text-decoration: none;
   }
 }
 

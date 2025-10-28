@@ -5,7 +5,8 @@ export default function GallerySection() {
     <section
       data-bs-version="5.1"
       className="gallery01 operationm5 cid-uzALG7EZ9r"
-      id="gallery-4-uzALG7EZ9r">
+      id="gallery-4-uzALG7EZ9r"
+      style={{ background: "var(--bg-primary)", padding: "3rem 0" }}>
       <div className="container-fluid gallery-wrapper">
         <div className="row justify-content-center">
           <div className="col-12 content-head">

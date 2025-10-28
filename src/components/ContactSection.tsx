@@ -2,90 +2,80 @@
 
 export default function ContactSection() {
   return (
-    <section
-      data-bs-version="5.1"
-      className="form01 operationm5 cid-uzALG7RXeZ"
-      id="contact-form-1-uzALG7RXeZ">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-12">
-            <div className="form-wrapper">
-              <div className="title-wrapper">
-                <p className="mbr-desc mbr-fonts-style display-7">
-                  Entre em Contato Comigo
-                </p>
-                <h2 className="mbr-section-title mbr-fonts-style display-2">
-                  Fale Comigo
-                </h2>
-              </div>
-              <div className="mbr-form form-wrap" data-form-type="formoid">
-                <form
-                  action="#"
-                  method="POST"
-                  className="mbr-form form-with-styler"
-                  data-form-title="Form Name">
-                  <div className="row">
-                    <div
-                      hidden={true}
-                      data-form-alert=""
-                      className="alert alert-success col-12">
-                      Obrigado por preencher o formulário!
-                    </div>
-                    <div
-                      hidden={true}
-                      data-form-alert-danger=""
-                      className="alert alert-danger col-12">
-                      {" "}
-                      Oops...! algum problema!
-                    </div>
-                  </div>
-                  <div className="dragArea row">
-                    <div
-                      className="col-lg-12 col-md-12 col-sm-12 form-group mb-3 mb-3"
-                      data-for="name">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Nome"
-                        data-form-field="name"
-                        className="form-control display-4"
-                        id="name-contact-form-1-uzALG7RXeZ"
-                      />
-                    </div>
-                    <div
-                      className="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
-                      data-for="text">
-                      <input
-                        type="text"
-                        name="text"
-                        placeholder="Email"
-                        data-form-field="email"
-                        className="form-control display-7"
-                        id="text-contact-form-1-uzALG7RXeZ"
-                      />
-                    </div>
-                    <div
-                      className="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
-                      data-for="textarea">
-                      <textarea
-                        name="textarea"
-                        placeholder="Mensagem"
-                        data-form-field="message"
-                        className="form-control display-4"
-                        id="textarea-contact-form-1-uzALG7RXeZ"></textarea>
-                    </div>
-                    <div className="col mbr-section-btn">
-                      <button
-                        type="submit"
-                        className="btn btn-primary display-4">
-                        Enviar Mensagem
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+    <section className="section" id="contact-tech">
+      <div className="container">
+        <div
+          style={{
+            maxWidth: "680px",
+            margin: "0 auto",
+            padding: "48px",
+            background: "var(--card-gradient)",
+            borderRadius: "24px",
+            backdropFilter: "blur(12px)",
+            border: "1px solid var(--highlight)",
+          }}>
+          <h2 className="title">Entre em Contato</h2>
+          <p className="description" style={{ marginBottom: "32px" }}>
+            Pronto para transformar sua empresa com automação inteligente? Envie
+            sua mensagem e retornaremos em breve.
+          </p>
+
+          <form
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <input
+              type="text"
+              placeholder="Seu nome"
+              style={{
+                width: "100%",
+                background: "var(--bg-secondary)",
+                border: "1px solid var(--highlight)",
+                borderRadius: "12px",
+                padding: "16px",
+                color: "var(--text-primary)",
+                fontSize: "1rem",
+              }}
+            />
+
+            <input
+              type="email"
+              placeholder="Seu email"
+              style={{
+                width: "100%",
+                background: "var(--bg-secondary)",
+                border: "1px solid var(--highlight)",
+                borderRadius: "12px",
+                padding: "16px",
+                color: "var(--text-primary)",
+                fontSize: "1rem",
+              }}
+            />
+
+            <textarea
+              placeholder="Sua mensagem"
+              rows={5}
+              style={{
+                width: "100%",
+                background: "var(--bg-secondary)",
+                border: "1px solid var(--highlight)",
+                borderRadius: "12px",
+                padding: "16px",
+                color: "var(--text-primary)",
+                fontSize: "1rem",
+                resize: "vertical",
+              }}
+            />
+
+            <button
+              type="submit"
+              className="cta"
+              style={{
+                width: "100%",
+                marginTop: "8px",
+                cursor: "pointer",
+              }}>
+              Enviar Mensagem
+            </button>
+          </form>
         </div>
       </div>
     </section>

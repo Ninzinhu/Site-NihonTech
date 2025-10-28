@@ -1,21 +1,20 @@
-import "../../assets/bootstrap.min.css";
-import "../../assets/icons2.css";
-import "../../assets/mobirise2.css";
+// Removendo imports desnecessários para manter apenas o essencial
 import "../styles/globals.css";
+import Providers from "./providers";
 
 export const metadata = {
-  title: "NihonTech - Tecnologia, Inovação e Cultura Japonesa",
+  title: "Konpeki Systems - Automação Inteligente e Soluções em IA",
   description:
-    "NihonTech é um espaço dedicado à tecnologia, projetos inovadores e cultura japonesa. Conheça nossos serviços, portfólio e diferenciais.",
+    "Konpeki Systems é especializada em soluções de automação inteligente, bots e inteligência artificial. Transforme seu negócio com tecnologia de ponta.",
   keywords:
-    "tecnologia, inovação, cultura japonesa, desenvolvimento web, projetos, portfólio, SaaS, mobile",
+    "automação, bots, inteligência artificial, IA, machine learning, desenvolvimento, tecnologia, inovação, automação de processos, chatbots",
   robots: "index, follow",
   openGraph: {
-    title: "NihonTech - Tecnologia, Inovação e Cultura Japonesa",
+    title: "Konpeki Systems - Automação Inteligente e Soluções em IA",
     description:
-      "NihonTech é um espaço dedicado à tecnologia, projetos inovadores e cultura japonesa.",
-    url: "https://nihontech-site.vercel.app/",
-    siteName: "NihonTech",
+      "Konpeki Systems é especializada em soluções de automação inteligente, bots e inteligência artificial.",
+    url: "https://konpeki.systems/",
+    siteName: "Konpeki Systems",
     images: [
       {
         url: "https://nihontech-site.vercel.app/assets/og-image.png",
@@ -44,9 +43,33 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        {/* Removidos os <link rel="stylesheet">, CSS agora importado via import */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0b0b0b" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Providers>
+          <main
+            style={{
+              minHeight: "100vh",
+              display: "flex",
+              flexDirection: "column",
+              position: "relative",
+              zIndex: 1,
+            }}>
+            {children}
+          </main>
+        </Providers>
+      </body>
     </html>
   );
 }

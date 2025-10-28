@@ -1,4 +1,5 @@
 "use client";
+import styles from "@/styles/ProjectsSection.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
@@ -149,8 +150,8 @@ const projects = [
     category: "Web Development",
     description:
       "Site institucional para restaurante, totalmente responsivo, com cardápio dinâmico e integração com WhatsApp.",
-    live: "https://responsiverestaurant.com/",
-    github: "https://github.com/Ninzinhu/ResponsiveRestaurant",
+    live: "https://responsive-restaurant-website-k0mlla37l-ninzinhus-projects.vercel.app/",
+    github: "https://github.com/Ninzinhu/Responsive-Restaurant-Website",
     screenshots: ["/assets/projects-screenshots/responsiverestaurant/1.png"],
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
@@ -196,65 +197,16 @@ export default function ProjectsSection() {
   }, [zoomImg]);
 
   return (
-    <section
-      style={{
-        background: "linear-gradient(120deg, #181c24 0%, #23272f 100%)",
-        padding: "60px 0",
-      }}
-      id="ultimos-projetos">
+    <section className={styles.projectsSection} id="ultimos-projetos">
       <div className="container">
-        <h2
-          style={{
-            color: "#ffd6b0",
-            fontWeight: 900,
-            fontSize: "2.5rem",
-            letterSpacing: "-1px",
-            textAlign: "center",
-            marginBottom: 48,
-          }}>
-          Ultimos Projetos
-        </h2>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 32,
-            justifyContent: "center",
-          }}>
+        <h2 className={styles.title}>Últimos Projetos</h2>
+        <div className={styles.projectsGrid}>
           {projects.map((proj) => (
             <div
               key={proj.id}
-              style={{
-                width: 400,
-                borderRadius: 16,
-                overflow: "hidden",
-                boxShadow: "0 9px 24px 0 rgba(0,0,0,0.13)",
-                position: "relative",
-                background: "#181c24",
-                cursor: "pointer",
-                transition:
-                  "transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s cubic-bezier(.4,2,.6,1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform =
-                  "scale(1.04) translateY(-6px)";
-                e.currentTarget.style.boxShadow =
-                  "0 16px 40px 0 rgba(255,214,176,0.13), 0 2px 16px 0 rgba(0,0,0,0.18)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1) translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 9px 24px 0 rgba(0,0,0,0.13)";
-              }}
-              onClick={() => {
-                setOpen(proj.id);
-              }}>
-              <div
-                style={{
-                  position: "relative",
-                  height: 220,
-                  overflow: "hidden",
-                }}>
+              className={styles.projectCard}
+              onClick={() => setOpen(proj.id)}>
+              <div className={styles.imageContainer}>
                 <Image
                   src={proj.img}
                   alt={proj.title}
@@ -264,53 +216,11 @@ export default function ProjectsSection() {
                     background: proj.id === "eliteskins" ? "#000" : undefined,
                   }}
                 />
-                <div
-                  style={{
-                    position: "absolute",
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    height: "25%",
-                    background: "rgba(0,0,0,0.48)",
-                    backdropFilter: "blur(10px)",
-                    WebkitBackdropFilter: "blur(10px)",
-                    zIndex: 1,
-                  }}
-                />
+                <div className={styles.imageOverlay} />
               </div>
-              <div
-                style={{
-                  position: "absolute",
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  padding: "16px 24px 20px 24px",
-                  zIndex: 2,
-                }}>
-                <span
-                  style={{
-                    display: "inline-block",
-                    background: "#ffd6b0",
-                    color: "#181c24",
-                    fontWeight: 700,
-                    fontSize: 14,
-                    borderRadius: 8,
-                    padding: "2px 12px",
-                    marginBottom: 18,
-                    marginTop: 0,
-                  }}>
-                  {proj.category}
-                </span>
-                <h3
-                  style={{
-                    color: "#fff",
-                    fontWeight: 900,
-                    fontSize: 20,
-                    margin: 0,
-                    textShadow: "0 2px 8px #000",
-                  }}>
-                  {proj.title}
-                </h3>
+              <div className={styles.cardContent}>
+                <span className={styles.category}>{proj.category}</span>
+                <h3 className={styles.projectTitle}>{proj.title}</h3>
               </div>
             </div>
           ))}
@@ -320,146 +230,44 @@ export default function ProjectsSection() {
         {projects.map(
           (proj) =>
             open === proj.id && (
-              <div
-                key={proj.id}
-                style={{
-                  position: "fixed",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: "rgba(0,0,0,0.7)",
-                  zIndex: 1000,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}>
-                <div
-                  style={{
-                    background: "#111",
-                    borderRadius: 16,
-                    padding: 24,
-                    maxWidth: 620,
-                    width: "100%",
-                    color: "#f5f5f7",
-                    position: "relative",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.45)",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    fontFamily: "Inter, Arial, Helvetica, sans-serif",
-                    letterSpacing: 0.1,
-                  }}>
+              <div key={proj.id} className={styles.modalOverlay}>
+                <div className={styles.modal}>
                   <button
                     onClick={() => setOpen(null)}
-                    style={{
-                      position: "absolute",
-                      top: 18,
-                      right: 24,
-                      background: "none",
-                      border: "none",
-                      color: "#fff",
-                      fontSize: 28,
-                      cursor: "pointer",
-                    }}
+                    className={styles.closeButton}
                     aria-label="Fechar">
                     ×
                   </button>
-                  <h2
-                    style={{
-                      fontWeight: 900,
-                      fontSize: 28,
-                      marginBottom: 24,
-                      textAlign: "center",
-                      letterSpacing: -1,
-                      color: "#fff",
-                    }}>
-                    {proj.title}
-                  </h2>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: 32,
-                      justifyContent: "center",
-                      marginBottom: 24,
-                    }}>
+                  <h2 className={styles.modalTitle}>{proj.title}</h2>
+                  <div className={styles.skillsContainer}>
                     <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        transition: "transform 0.25s cubic-bezier(.4,2,.6,1)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "scale(1.08)";
-                        setHoveredSkill({ type: "frontend", idx: 0 });
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "scale(1)";
-                        setHoveredSkill(null);
-                      }}>
-                      <div
-                        style={{
-                          background: "#181c24",
-                          borderRadius: 14,
-                          padding: 14,
-                          marginBottom: 6,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          minWidth: 48,
-                          minHeight: 48,
-                        }}>
-                        <div style={{ display: "flex", gap: 12 }}>
+                      className={styles.skillGroup}
+                      onMouseEnter={() =>
+                        setHoveredSkill({ type: "frontend", idx: 0 })
+                      }
+                      onMouseLeave={() => setHoveredSkill(null)}>
+                      <div className={styles.skillsGrid}>
+                        <div className={styles.skillIconContainer}>
                           {proj.skills.frontend
                             .filter(Boolean)
                             .map((skill, i) => (
                               <div
                                 key={i}
-                                style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  alignItems: "center",
-                                  transition:
-                                    "transform 0.25s cubic-bezier(.4,2,.6,1)",
-                                  cursor: "pointer",
-                                  position: "relative",
-                                }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.transform =
-                                    "scale(1.18)";
+                                className={styles.skillIcon}
+                                onMouseEnter={() =>
                                   setHoveredSkill({
                                     type: "frontend",
                                     idx: i,
-                                  });
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.transform = "scale(1)";
-                                  setHoveredSkill(null);
-                                }}>
-                                <span style={{ fontSize: 26 }}>
+                                  })
+                                }
+                                onMouseLeave={() => setHoveredSkill(null)}>
+                                <span className={styles.skillIconSymbol}>
                                   {skill.icon}
                                 </span>
                                 {hoveredSkill &&
                                   hoveredSkill.type === "frontend" &&
                                   hoveredSkill.idx === i && (
-                                    <span
-                                      style={{
-                                        position: "absolute",
-                                        top: -36,
-                                        left: "50%",
-                                        transform: "translateX(-50%)",
-                                        background: "#222",
-                                        color: "#fff",
-                                        padding: "4px 14px",
-                                        borderRadius: 8,
-                                        fontSize: 15,
-                                        fontWeight: 700,
-                                        whiteSpace: "nowrap",
-                                        boxShadow: "0 2px 12px #000a",
-                                        zIndex: 20,
-                                        pointerEvents: "none",
-                                      }}>
+                                    <span className={styles.skillTooltip}>
                                       {skill.title}
                                     </span>
                                   )}
@@ -467,93 +275,36 @@ export default function ProjectsSection() {
                             ))}
                         </div>
                       </div>
-                      <span
-                        style={{
-                          fontWeight: 700,
-                          color: "#b0b0b0",
-                          fontSize: 15,
-                          fontFamily: "Inter, Arial, Helvetica, sans-serif",
-                        }}>
-                        Frontend
-                      </span>
+                      <span className={styles.skillLabel}>Frontend</span>
                     </div>
                     <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        transition: "transform 0.25s cubic-bezier(.4,2,.6,1)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "scale(1.08)";
-                        setHoveredSkill({ type: "backend", idx: 0 });
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "scale(1)";
-                        setHoveredSkill(null);
-                      }}>
-                      <div
-                        style={{
-                          background: "#181c24",
-                          borderRadius: 14,
-                          padding: 14,
-                          marginBottom: 6,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          minWidth: 48,
-                          minHeight: 48,
-                        }}>
-                        <div style={{ display: "flex", gap: 12 }}>
+                      className={styles.skillGroup}
+                      onMouseEnter={() =>
+                        setHoveredSkill({ type: "backend", idx: 0 })
+                      }
+                      onMouseLeave={() => setHoveredSkill(null)}>
+                      <div className={styles.skillsGrid}>
+                        <div className={styles.skillIconContainer}>
                           {proj.skills.backend
                             .filter(Boolean)
                             .map((skill, i) => (
                               <div
                                 key={i}
-                                style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  alignItems: "center",
-                                  transition:
-                                    "transform 0.25s cubic-bezier(.4,2,.6,1)",
-                                  cursor: "pointer",
-                                  position: "relative",
-                                }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.transform =
-                                    "scale(1.18)";
+                                className={styles.skillIcon}
+                                onMouseEnter={() =>
                                   setHoveredSkill({
                                     type: "backend",
                                     idx: i,
-                                  });
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.transform = "scale(1)";
-                                  setHoveredSkill(null);
-                                }}>
-                                <span style={{ fontSize: 26 }}>
+                                  })
+                                }
+                                onMouseLeave={() => setHoveredSkill(null)}>
+                                <span className={styles.skillIconSymbol}>
                                   {skill.icon}
                                 </span>
                                 {hoveredSkill &&
                                   hoveredSkill.type === "backend" &&
                                   hoveredSkill.idx === i && (
-                                    <span
-                                      style={{
-                                        position: "absolute",
-                                        top: -36,
-                                        left: "50%",
-                                        transform: "translateX(-50%)",
-                                        background: "#222",
-                                        color: "#fff",
-                                        padding: "4px 14px",
-                                        borderRadius: 8,
-                                        fontSize: 15,
-                                        fontWeight: 700,
-                                        whiteSpace: "nowrap",
-                                        boxShadow: "0 2px 12px #000a",
-                                        zIndex: 20,
-                                        pointerEvents: "none",
-                                      }}>
+                                    <span className={styles.skillTooltip}>
                                       {skill.title}
                                     </span>
                                   )}
@@ -561,45 +312,18 @@ export default function ProjectsSection() {
                             ))}
                         </div>
                       </div>
-                      <span
-                        style={{
-                          fontWeight: 700,
-                          color: "#b0b0b0",
-                          fontSize: 15,
-                          fontFamily: "Inter, Arial, Helvetica, sans-serif",
-                        }}>
-                        Backend
-                      </span>
+                      <span className={styles.skillLabel}>Backend</span>
                     </div>
                   </div>
-                  <p
-                    style={{
-                      marginBottom: 24,
-                      fontFamily: "Inter, Arial, Helvetica, sans-serif",
-                      fontSize: 16,
-                      color: "#f5f5f7",
-                      textAlign: "left",
-                      maxWidth: 520,
-                      lineHeight: 1.6,
-                    }}>
+                  <p className={styles.projectDescription}>
                     {proj.description}
                   </p>
-                  <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
+                  <div className={styles.actionButtons}>
                     <a
                       href={proj.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        background: "#fff",
-                        color: "#181c24",
-                        padding: "8px 18px",
-                        borderRadius: 8,
-                        fontWeight: 700,
-                        textDecoration: "none",
-                        fontSize: 15,
-                        boxShadow: "0 2px 8px #0002",
-                        fontFamily: "Inter, Arial, Helvetica, sans-serif",
-                      }}>
+                      className={styles.actionButton}>
                       Veja o Deploy
                     </a>
                     {proj.github && (
@@ -607,33 +331,16 @@ export default function ProjectsSection() {
                         href={proj.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                          background: "#fff",
-                          color: "#181c24",
-                          padding: "8px 18px",
-                          borderRadius: 8,
-                          fontWeight: 700,
-                          textDecoration: "none",
-                          fontSize: 15,
-                          boxShadow: "0 2px 8px #0002",
-                          fontFamily: "Inter, Arial, Helvetica, sans-serif",
-                        }}>
+                        className={styles.actionButton}>
                         Github
                       </a>
                     )}
                   </div>
-                  <div
-                    style={{
-                      width: "100%",
-                      borderRadius: 12,
-                      overflow: "hidden",
-                      marginBottom: 8,
-                      background: "#222",
-                    }}>
+                  <div className={styles.screenshotsContainer}>
                     <Swiper
                       spaceBetween={10}
                       slidesPerView={1}
-                      style={{ width: "100%", height: 260 }}
+                      className={styles.screenshotSlider}
                       navigation
                       modules={[Navigation]}>
                       {proj.screenshots.map((img, idx) => (
@@ -653,21 +360,7 @@ export default function ProjectsSection() {
                           />
                           <button
                             onClick={() => setZoomImg(img)}
-                            style={{
-                              position: "absolute",
-                              right: 16,
-                              bottom: 16,
-                              background: "rgba(0,0,0,0.7)",
-                              color: "#ffd6b0",
-                              border: "none",
-                              borderRadius: 8,
-                              padding: "6px 16px",
-                              fontWeight: 700,
-                              cursor: "pointer",
-                              fontSize: 15,
-                              zIndex: 10,
-                              boxShadow: "0 2px 8px #0008",
-                            }}>
+                            className={styles.screenshotZoomButton}>
                             Dar zoom
                           </button>
                         </SwiperSlide>
@@ -679,33 +372,13 @@ export default function ProjectsSection() {
             )
         )}
         {zoomImg && (
-          <div
-            onClick={() => setZoomImg(null)}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              background: "rgba(0,0,0,0.92)",
-              zIndex: 2000,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "zoom-out",
-            }}>
+          <div onClick={() => setZoomImg(null)} className={styles.zoomOverlay}>
             <Image
               src={zoomImg}
               alt="Zoom"
               width={900}
               height={600}
-              style={{
-                maxWidth: "90vw",
-                maxHeight: "90vh",
-                borderRadius: 16,
-                boxShadow: "0 8px 32px #000a",
-                background: "#111",
-              }}
+              className={styles.zoomImage}
               onClick={(e) => e.stopPropagation()}
             />
           </div>
