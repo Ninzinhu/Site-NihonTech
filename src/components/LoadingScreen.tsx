@@ -29,7 +29,7 @@ export default function LoadingScreen() {
         />
         <span
           className="mbr-fonts-style display-7"
-          style={{ color: "#39ff14", fontWeight: 600 }}>
+          style={{ color: "#ffffff", fontWeight: 600 }}>
           Carregando...
         </span>
         <style>{`

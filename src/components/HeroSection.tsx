@@ -115,7 +115,7 @@ export default function HeroSection() {
 
         <div className={styles.ctaWrapper}>
           <a
-            href="https://wa.me/5511999999999?text=Olá! Gostaria de iniciar um projeto."
+            href="https://wa.me/5579991162353?text=Olá! Gostaria de iniciar um projeto."
             target="_blank"
             rel="noopener noreferrer"
             className={styles.cta}>

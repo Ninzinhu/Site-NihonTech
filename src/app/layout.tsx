@@ -9,6 +9,11 @@ export const metadata = {
   keywords:
     "automação, bots, inteligência artificial, IA, machine learning, desenvolvimento, tecnologia, inovação, automação de processos, chatbots",
   robots: "index, follow",
+  icons: {
+    icon: "/assets/favicon.png",
+    shortcut: "/assets/favicon.png",
+    apple: "/assets/favicon.png",
+  },
   openGraph: {
     title: "Konpeki Systems - Automação Inteligente e Soluções em IA",
     description:

@@ -18,3 +18,4 @@ https.get(url, (response) => {
   console.error('Erro ao baixar GIF:', err.message);
 });
 
+

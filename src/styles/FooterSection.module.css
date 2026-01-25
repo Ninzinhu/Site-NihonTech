@@ -1,8 +1,8 @@
 .footer {
   background: var(--bg-secondary);
-  border-top: 2px solid rgba(176, 176, 176, 0.3);
-  padding: 32px 0;
+  padding: 60px 0 40px 0;
   position: relative;
+  overflow: hidden;
 }
 
 .footer::before {
@@ -12,29 +12,68 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  background: linear-gradient(90deg, transparent, var(--primary-color), var(--secondary-color), transparent);
+}
+
+.footerGlow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
 }
 
 .links {
   display: flex;
+  gap: 40px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 32px;
-  margin-bottom: 16px;
 }
 
 .link {
   color: var(--text-secondary);
-  text-decoration: none;
   font-size: 0.95rem;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 1px;
+  font-weight: 500;
+  text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -43,12 +82,13 @@
   content: '';
   position: absolute;
   bottom: -4px;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--primary-color);
-  transition: width 0.3s ease;
-  box-shadow: 0 0 10px var(--primary-color);
+  background: linear-gradient(90deg, #ffffff, #a0a0a0);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .link:hover::after {
@@ -56,32 +96,114 @@
 }
 
 .link:hover {
-  color: var(--primary-color);
-  text-shadow: 0 0 10px rgba(176, 176, 176, 0.5);
+  color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.divider {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  margin-bottom: 24px;
 }
 
 .copyright {
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-size: 0.9rem;
-  opacity: 0.8;
   margin: 0;
   text-align: center;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 24px 0;
+    padding: 48px 0 32px 0;
+  }
+
+  .footerGlow {
+    width: 500px;
+    height: 250px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .brand {
+    margin-bottom: 28px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
   }
 
   .links {
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 20px 32px;
+    margin-bottom: 28px;
   }
 
   .link {
     font-size: 0.9rem;
+  }
+
+  .divider {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+
+  .copyright {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 28px 0;
+  }
+
+  .footerGlow {
+    width: 350px;
+    height: 180px;
+    top: -150px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .brand {
+    margin-bottom: 24px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .divider {
+    width: 120px;
+    margin-bottom: 18px;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }

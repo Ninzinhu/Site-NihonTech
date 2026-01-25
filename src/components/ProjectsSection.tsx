@@ -33,6 +33,7 @@ import {
   SiVuedotjs,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { VscAzure } from "react-icons/vsc";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -53,6 +54,8 @@ const PROJECT_SKILLS = {
   tailwind: { title: "Tailwind", icon: <SiTailwindcss /> },
   docker: { title: "Docker", icon: <SiDocker /> },
   firebase: { title: "Firebase", icon: <SiFirebase /> },
+  azure: { title: "Azure", icon: <VscAzure /> },
+  doker: { title: "Docker", icon: <SiDocker /> },
   sockerio: { title: "Socket.io", icon: <SiSocketdotio /> },
   js: { title: "JavaScript", icon: <SiJavascript /> },
   ts: { title: "TypeScript", icon: <SiTypescript /> },
@@ -89,21 +92,30 @@ const projects = [
     },
   },
   {
-    id: "currencyconverter",
-    img: "/assets/projects-screenshots/currency/1.png",
-    title: "Conversor de Moedas (Câmbio)",
-    category: "Web Development",
+    id: "bot-geralt",
+    img: "/assets/projects-screenshots/bot-geralt/1.png",
+    title: "Bot Geralt - AUTOMOD, TICKETS",
+    category: "Bot Discord",
     description:
-      "Conversor de moedas online para facilitar cálculos de câmbio em tempo real! API e Backend feito em Go, Frontend em HTML,JS,CSS.",
+      "Bot para Discord com diversas funcionalidades, como moderação automática, sistema de tickets, comandos personalizados e integração com APIs externas, Scrapping de dados, verificação de contas do discord",
     live: "https://currency-converter-psi-mauve.vercel.app/",
     github: "https://github.com/Ninzinhu/CurrencyConverter",
     screenshots: [
-      "/assets/projects-screenshots/currency/1.png",
-      "/assets/projects-screenshots/currency/2.png",
+      "/assets/projects-screenshots/bot-geralt/1.png",
+      "/assets/projects-screenshots/bot-geralt/2.png",
+      "/assets/projects-screenshots/bot-geralt/3.png",
+      "/assets/projects-screenshots/bot-geralt/4.png",
+      "/assets/projects-screenshots/bot-geralt/5.png",
     ],
     skills: {
-      frontend: [PROJECT_SKILLS.html, PROJECT_SKILLS.css, PROJECT_SKILLS.js],
-      backend: [PROJECT_SKILLS.go],
+      frontend: [PROJECT_SKILLS.js],
+      backend: [
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.azure,
+        PROJECT_SKILLS.docker,
+      ],
     },
   },
   {
@@ -199,7 +211,12 @@ export default function ProjectsSection() {
   return (
     <section className={styles.projectsSection} id="ultimos-projetos">
       <div className="container">
-        <h2 className={styles.title}>Últimos Projetos</h2>
+        <h2 className={styles.title}>
+          Últimos <span>Projetos</span>
+        </h2>
+        <p className={styles.sectionSubtitle}>
+          Conheça algumas das soluções que desenvolvemos para nossos clientes
+        </p>
         <div className={styles.projectsGrid}>
           {projects.map((proj) => (
             <div
@@ -349,13 +366,12 @@ export default function ProjectsSection() {
                             src={img}
                             alt={proj.title + " screenshot " + idx}
                             width={600}
-                            height={260}
+                            height={340}
                             style={{
-                              objectFit:
-                                proj.id === "eliteskins" ? "contain" : "cover",
+                              objectFit: "contain",
                               width: "100%",
-                              background:
-                                proj.id === "eliteskins" ? "#000" : undefined,
+                              height: "100%",
+                              background: "#111",
                             }}
                           />
                           <button
@@ -369,7 +385,7 @@ export default function ProjectsSection() {
                   </div>
                 </div>
               </div>
-            )
+            ),
         )}
         {zoomImg && (
           <div onClick={() => setZoomImg(null)} className={styles.zoomOverlay}>

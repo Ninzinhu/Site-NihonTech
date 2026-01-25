@@ -9,13 +9,42 @@
   padding: 120px 20px 80px;
 }
 
+/* Efeito de partículas flutuantes - Monocromático */
 .hero::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(128, 128, 128, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(200, 200, 200, 0.03) 0%, transparent 55%);
   pointer-events: none;
+  animation: pulse-glow 10s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .heroContent {
@@ -24,8 +53,8 @@
   position: relative;
   z-index: 1;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .heroContent.visible {
@@ -35,29 +64,53 @@
 
 .titleWrapper {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 
 .title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -1.5px;
+  line-height: 1.05;
+  letter-spacing: -2px;
   color: var(--text-primary);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80px;
+  min-height: 100px;
+  position: relative;
 }
 
 .typingText {
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 40%, #808080 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+  text-shadow: none;
+  filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .cursor {
   animation: blink 1s infinite;
-  margin-left: 2px;
+  margin-left: 4px;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
 }
 
 @keyframes blink {
@@ -81,34 +134,88 @@
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   color: var(--text-secondary);
   font-weight: 400;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,  3.5fr));
-  gap: 24px;
-  margin: 64px 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 72px 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .featureCard {
-  background: rgba(26, 26, 26, 0.6);
-  border-radius: 20px;
+  background: rgba(20, 20, 20, 0.7);
+  border-radius: 24px;
   padding: 40px 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: cardFadeIn 0.8s ease forwards;
+  animation-delay: calc(var(--card-index, 0) * 0.1s);
+}
+
+.featureCard:nth-child(1) {
+  --card-index: 1;
+}
+
+.featureCard:nth-child(2) {
+  --card-index: 2;
+}
+
+.featureCard:nth-child(3) {
+  --card-index: 3;
+}
+
+.featureCard:nth-child(4) {
+  --card-index: 4;
+}
+
+.featureCard:nth-child(5) {
+  --card-index: 5;
+}
+
+.featureCard:nth-child(6) {
+  --card-index: 6;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .featureCard::before {
@@ -118,102 +225,253 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, var(--primary-color), var(--secondary-color), transparent);
   transform: scaleX(0);
   transition: transform 0.6s ease;
+}
+
+.featureCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .featureCard:hover::before {
   transform: scaleX(1);
 }
 
+.featureCard:hover::after {
+  opacity: 1;
+}
+
 .featureCard:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px) scale(1.02);
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .featureIcon {
-  font-size: 3rem;
-  color: var(--text-primary);
+  font-size: 3.5rem;
   margin-bottom: 24px;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(128, 128, 128, 0.05) 100%);
+  color: var(--primary-light);
+  position: relative;
+  z-index: 1;
 }
 
 .featureCard:hover .featureIcon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(160, 160, 160, 0.1) 100%);
 }
 
 .featureCard h3 {
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+  position: relative;
+  z-index: 1;
 }
 
 .featureCard p {
   color: var(--text-secondary);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
 }
 
 .ctaWrapper {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 72px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 1s forwards;
 }
 
 .cta {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 16px 40px;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  background-size: 200% 200%;
+  color: #000000;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 14px;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  gap: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.cta:hover::before {
+  left: 100%;
 }
 
 .cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 40px rgba(255, 255, 255, 0.3),
+    0 0 60px rgba(255, 255, 255, 0.15);
+  animation: gradient-flow 2s ease infinite;
 }
 
 .ctaIcon {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cta:hover .ctaIcon {
-  transform: translateX(5px);
+  transform: translateX(8px);
+}
+
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
     padding: 100px 16px 60px;
+    min-height: auto;
+  }
+
+  .hero::before {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(128, 128, 128, 0.05) 0%, transparent 50%);
+  }
+
+  .titleWrapper {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    min-height: 70px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 0 8px;
   }
 
   .features {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
+    margin: 40px 0;
+    padding: 0 4px;
   }
 
   .featureCard {
-    padding: 32px 24px;
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .featureCard:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+
+  .featureIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    border-radius: 16px;
+    margin-bottom: 18px;
   }
 
   .featureCard h3 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .featureCard p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .cta {
     width: 100%;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 16px 28px;
     font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .ctaWrapper {
+    margin-top: 40px;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 12px 50px;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    min-height: 60px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .featureCard {
+    padding: 24px 18px;
+  }
+
+  .featureIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.8rem;
+  }
+
+  .featureCard h3 {
+    font-size: 1.1rem;
+  }
+
+  .featureCard p {
+    font-size: 0.85rem;
+  }
+
+  .cta {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    gap: 10px;
   }
 }
 

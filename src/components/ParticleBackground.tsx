@@ -8,6 +8,7 @@ interface Particle {
   vx: number;
   vy: number;
   size: number;
+  color: string;
 }
 
 export default function ParticleBackground() {
@@ -21,7 +22,19 @@ export default function ParticleBackground() {
     if (!ctx) return;
 
     const particles: Particle[] = [];
-    const particleCount = 80;
+    // Reduz partículas no mobile para melhor performance
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 40 : 70;
+    const connectionDistance = isMobile ? 100 : 130;
+
+    // Cores Monocromáticas - Branco e Cinza
+    const colors = [
+      "rgba(255, 255, 255, 0.4)", // white
+      "rgba(200, 200, 200, 0.35)", // light gray
+      "rgba(160, 160, 160, 0.3)", // medium gray
+      "rgba(128, 128, 128, 0.25)", // gray
+      "rgba(255, 255, 255, 0.2)", // white subtle
+    ];
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -32,13 +45,15 @@ export default function ParticleBackground() {
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 2.5 + 0.5,
+        color: colors[Math.floor(Math.random() * colors.length)],
       };
     };
 
     const initParticles = () => {
+      particles.length = 0;
       for (let i = 0; i < particleCount; i++) {
         particles.push(createParticle());
       }
@@ -62,7 +77,7 @@ export default function ParticleBackground() {
         const p = particles[i];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.4})`;
+        ctx.fillStyle = p.color;
         ctx.fill();
       }
 
@@ -72,14 +87,14 @@ export default function ParticleBackground() {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
+          if (distance < connectionDistance) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${
-              0.1 * (1 - distance / 120)
-            })`;
-            ctx.lineWidth = 0.5;
+            // Gradiente de cor baseado na distância - Monocromático
+            const opacity = 0.1 * (1 - distance / connectionDistance);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }

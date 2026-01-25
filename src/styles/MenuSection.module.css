@@ -5,9 +5,21 @@
   right: 0;
   z-index: 1000;
   padding: 16px 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), rgba(160, 160, 160, 0.15), transparent);
 }
 
 .navContainer {
@@ -24,24 +36,29 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
 }
 
 .logo:hover {
-  opacity: 0.8;
+  transform: scale(1.02);
 }
 
 .logoText {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.3px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .navLink {
@@ -49,19 +66,22 @@
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  padding: 8px 0;
 }
 
 .navLink::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
   width: 0;
-  height: 1px;
-  background: var(--text-primary);
-  transition: width 0.3s ease;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, #a0a0a0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .navLink:hover::after {
@@ -70,22 +90,44 @@
 
 .navLink:hover {
   color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .cta {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  background-size: 200% 200%;
+  color: #000000;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 12px 28px;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta:hover::before {
+  left: 100%;
 }
 
 .cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 8px 28px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -95,8 +137,8 @@
 
   .navContainer {
     flex-direction: column;
-    gap: 20px;
-    padding: 0 20px;
+    gap: 16px;
+    padding: 0 16px;
   }
 
   .logoText {
@@ -106,18 +148,48 @@
   .navLinks {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
     width: 100%;
   }
 
   .navLink {
     font-size: 0.9rem;
+    padding: 6px 0;
   }
 
   .cta {
     width: 100%;
     text-align: center;
     font-size: 0.9rem;
-    padding: 12px 20px;
+    padding: 12px 24px;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .navContainer {
+    gap: 14px;
+    padding: 0 12px;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+  }
+
+  .navLinks {
+    gap: 12px;
+  }
+
+  .navLink {
+    font-size: 0.85rem;
+  }
+
+  .cta {
+    font-size: 0.85rem;
+    padding: 11px 20px;
   }
 }

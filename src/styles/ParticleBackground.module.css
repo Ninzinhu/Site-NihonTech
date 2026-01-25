@@ -6,5 +6,17 @@
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .particleBackground {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .particleBackground {
+    opacity: 0.35;
+  }
 }

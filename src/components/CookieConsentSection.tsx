@@ -24,7 +24,7 @@ export default function CookieConsentSection() {
         navegando, você concorda com nossa{" "}
         <a
           href="/politica-de-privacidade"
-          style={{ color: "#39ff14", textDecoration: "underline" }}>
+          style={{ color: "#ffffff", textDecoration: "underline" }}>
           Política de Privacidade
         </a>
         .
